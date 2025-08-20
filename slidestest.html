@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+</head>
+<!-- <style>
+    .search-wrapper {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    #searchInput {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 8px;
+        padding: 10px;
+        background-color: #ff9900;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #suggestionList {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #ccc;
+        max-height: 200px;
+        overflow-y: auto;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #suggestionList li {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #suggestionList li:hover {
+        background-color: #f0f0f0;
+    }
+</style> -->
+ิ
+
+<body>
+
+
+    <div class="relative w-full max-w-md mx-auto flex">
+        <input type="text" id="searchInput" placeholder="ค้นหาสินค้า..."
+            class="w-full px-4 py-2 text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+            autocomplete="off" />
+        <div class="flex bg-orange-500 rounded hover:bg-orange-700 transition mx-1">
+            <button onclick="handleSearch()" class=" px-4 py-2  text-white rounded transition w-full h-full">
+
+                <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </button>
+        </div>
+        <ul id="suggestionList"
+            class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded shadow-md z-20 mt-1 max-h-60 overflow-auto hidden">
+        </ul>
+    </div>
+
+
+
+    <div class="container text-center">kkkkkkkkkkk</div>
+
+    <!-- <div class="container text-center">
+        <form class="lg:flex items-center w-[50%] mx-2 hidden">
+
+            <div class="relative w-full">
+                <input id="searchInput" type="text" class="bg-gray-50 border border-gray-300
+                        text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:borderorange-400 block w-full ps-4 p-2.5  dark:bg-gray-700 dark:border-gray-600
+                        dark:placeholder-gray-400 dark:text-white" placeholder="ค้นหาสินค้า" required  autocomplete="off" />
+                </button>
+            </div>
+            <button onclick="handleSearch()" type="submit" class="inline-flex items-center p-3 ms-2 text-sm font-medium text-white bg-orange-700 rounded-lg border border-orange-700
+                    hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-400">
+                <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </button>
+        </form>
+        <ul id="suggestionList"
+            class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded shadow-md z-20 mt-1 max-h-60 overflow-auto hidden">
+        </ul>
+    </div> -->
+
+
+    <script>
+        const products = [
+            { name: "iPhone 13 เคสซิลิโคน", url: "product.html?id=iphone13-case" },
+            { name: "Apple iPad Air 11-inch (M2)", url: "product.html?id=ipad-air-m2" },
+            { name: "Xiaomi G27i Gaming Monitor", url: "product.html?id=xiaomi-g27i" },
+            { name: "Apple iPad Pro 11-inch Wi-Fi", url: "product.html?id=ipad-pro-11" },
+            { name: "iPhone 13 ฟิล์มกระจก", url: "product.html?id=iphone13-glass" },
+            { name: "iPhone 13 Pro Max เคสใส", url: "product.html?id=iphone13pro-clear" }
+        ];
+
+        const input = document.getElementById("searchInput");
+        const suggestionList = document.getElementById("suggestionList");
+
+        input.addEventListener("input", () => {
+            const query = input.value.trim().toLowerCase();
+            suggestionList.innerHTML = "";
+
+            if (query === "") {
+                suggestionList.classList.add("hidden");
+                return;
+            }
+
+            const matches = products.filter(product =>
+                product.name.toLowerCase().includes(query)
+            );
+
+            matches.forEach(product => {
+                const li = document.createElement("li");
+                li.textContent = product.name;
+                li.className = "px-4 py-2 cursor-pointer hover:bg-orange-50 transition";
+                li.onclick = () => {
+                    window.location.href = product.url;
+                };
+                suggestionList.appendChild(li);
+            });
+
+            suggestionList.classList.remove("hidden");
+        });
+
+        input.addEventListener("focus", () => {
+            if (input.value.trim() !== "") {
+                suggestionList.classList.remove("hidden");
+            }
+        });
+
+        input.addEventListener("blur", () => {
+            setTimeout(() => {
+                suggestionList.classList.add("hidden");
+            }, 100); // delay เพื่อให้คลิก suggestion ทัน
+        });
+
+        function handleSearch() {
+            const query = input.value.trim().toLowerCase();
+            suggestionList.innerHTML = "";
+
+            if (query === "") {
+                window.location.href = "all-products.html";
+                return;
+            }
+
+            const matches = products.filter(product =>
+                product.name.toLowerCase().includes(query)
+            );
+
+            if (matches.length === 0) {
+                const li = document.createElement("li");
+                li.textContent = "ไม่พบสินค้า";
+                li.className = "px-4 py-2 text-gray-500";
+                suggestionList.appendChild(li);
+            } else {
+                matches.forEach(product => {
+                    const li = document.createElement("li");
+                    li.textContent = product.name;
+                    li.className = "px-4 py-2 cursor-pointer hover:bg-orange-50 transition";
+                    li.onclick = () => {
+                        window.location.href = product.url;
+                    };
+                    suggestionList.appendChild(li);
+                });
+            }
+
+            suggestionList.classList.remove("hidden");
+        }
+
+    </script>
+</body>
+
+</html>

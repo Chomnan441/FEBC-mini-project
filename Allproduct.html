@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<style>
+    /* Menu bar */
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 25px;
+        height: 4px;
+        background-color: #482306;
+        margin: 3px 0;
+        transition: 0.2s;
+        border-radius: 2px;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 7px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: translate(0, -7px) rotate(45deg);
+    }
+
+    /* ------------------------------------------------------- */
+
+    /* Slide add on */
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .mySlides_blog_review {
+        display: none
+    }
+
+    /* ------------------------------------------------------- */
+
+    /* fire animation */
+    @keyframes scaleUpDown {
+
+        0%,
+        100% {
+            transform: scaleY(1) scaleX(1);
+        }
+
+        50%,
+        90% {
+            transform: scaleY(1.1);
+        }
+
+        75% {
+            transform: scaleY(0.95);
+        }
+
+        80% {
+            transform: scaleX(0.95);
+        }
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: skewX(0) scale(1);
+        }
+
+        50% {
+            transform: skewX(5deg) scale(0.9);
+        }
+    }
+
+    @keyframes particleUp {
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            top: -100%;
+            transform: scale(0.5);
+        }
+    }
+
+    @keyframes glow {
+
+        0%,
+        100% {
+            background-color: #ef5a00;
+        }
+
+        50% {
+            background-color: #ff7800;
+        }
+    }
+
+    .fire {
+        position: absolute;
+        /* top: calc(50% - 50px);
+    left: calc(50% - 50px); */
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fire-center {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: scaleUpDown 3s ease-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(farthest-corner at 10px 0,
+                    #d43300 0%,
+                    #ef5a00 95%);
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+            position: absolute;
+            top: 60%;
+            left: 45%;
+            width: 10px;
+            height: 10px;
+            background-color: #ef5a00;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+    }
+
+    .fire-right {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        animation: shake 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+            position: absolute;
+            top: 15%;
+            right: -25%;
+            width: 80%;
+            height: 80%;
+            background-color: #ef5a00;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: #ef5a00;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 2s ease-out 0;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+    }
+
+    .fire-left {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: shake 3s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+            position: absolute;
+            top: 15%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background-color: #ef5a00;
+            transform: scaleX(0.8) rotate(45deg);
+            border-radius: 0 40% 60% 40%;
+            filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            width: 10%;
+            height: 10%;
+            background-color: #ef5a00;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px #d43322);
+            animation: particleUp 3s infinite ease-out 0;
+            animation-fill-mode: both;
+        }
+    }
+
+    .fire-bottom .main-fire {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        width: 75%;
+        height: 75%;
+        background-color: #ff7800;
+        transform: scaleX(0.8) rotate(45deg);
+        border-radius: 0 40% 100% 40%;
+        filter: blur(10px);
+        animation: glow 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+
+    /* ------------------------------------------------------- */
+</style>
+
+<body class="bg-gray-100 " style="font-family: Noto Sans Thai, sans-serif;">
+    <div class="relative w-[100vw] h-[100vh]">
+        <div class="bg-gray-100">
+            <div class="lg:h-[65px] h-[66px]">
+                <div class="fixed top-0 start-0 z-50 flex justify-between w-full bg-gray-100">
+                    <div class="bg-white w-full">
+                        <div class="container">
+                            <!-- memu tab and search bar:lg -->
+                            <div class="flex justify-around items-center relative bg-white py-3 text-center">
+
+                                <!-- nav bar left side -->
+                                <div class="flex justify-center text-center items-center" id="navBarLeftSide">
+                                    <div class="flex">
+                                        <div class="cursor-pointer mr-2"
+                                            onclick="myFunction(this);toggle_dropdown_main()">
+                                            <div class="bar1"></div>
+                                            <div class="bar2"></div>
+                                            <div class="bar3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-center justify-center items-center">
+                                        <img src="orange logo.png" class="w-10 lg:w-12 ml-2">
+                                        <div class="flex lg:text-3xl text-md hover:text-red-950 mt-1">
+                                            <p class="font-bold text-orange-600  lg:pl-0">O</p>
+                                            <p class="font-bold text-orange-700 ">R</p>
+                                            <p class="font-bold text-orange-800 ">A</p>
+                                            <p class="font-bold text-green-700 ">N</p>
+                                            <p class="font-bold text-green-800 ">G</p>
+                                            <p class="font-bold text-green-900 ">E</p>
+                                            <p class="font-bold text-amber-950 lg:pl-4 pl-2">i</p>
+                                            <p class="font-bold text-amber-950  lg:pr-4 pr-2">T</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- search bar-->
+                                <div class="relative lg:w-[50%] mx-auto lg:block hidden w-[100%]" id="searchMobile">
+                                    <div class=" mx-auto px-4">
+                                        <div class="flex justify-center items-center text-center">
+
+                                            <!-- search symbol -->
+                                            <!-- <div class="block lg:hidden mr-2">
+                                                <button id="search-btn"
+                                                    class=" px-4 py-2 bg-orange-300 hover:bg-orange-400 rounded font-semibold">🔍
+                                            </div> -->
+                                            <div class="relative lg:w-[80%] w-[80%]">
+                                                <input type="text" id="search-input" placeholder="ค้นหาสินค้า..."
+                                                    class="w-full p-2 border border-orange-300 rounded focus:ring-2 focus:ring-orange-400"
+                                                    autocomplete="off">
+                                                <ul id="autocomplete-list"
+                                                    class="absolute z-10 bg-white border border-orange-200 rounded w-full mt-1 hidden">
+                                                </ul>
+                                            </div>
+                                            <!-- <div class="relative mb-4 w-[70%]">
+                                                <input type="text" id="search-input" placeholder="ค้นหาสินค้า..."
+                                                    class="w-full p-2 border border-orange-300 rounded focus:ring-2 focus:ring-orange-400"
+                                                    autocomplete="off">
+                                                <ul id="autocomplete-list"
+                                                    class="absolute z-10 bg-white border border-orange-200 rounded w-full mt-1 hidden">
+                                                </ul>
+                                            </div> -->
+                                            <!-- cross symbol -->
+                                            <div onclick="toggle_searchMobile()" class="lg:hidden rounded hover:cursor-pointer ml-1 items-center p-[11px] text-sm font-medium text-white bg-orange-700 border border-orange-700
+                        hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-400">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18 18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                            <!-- search symbol -->
+                                            <div class="block text-white">
+                                                <button id="search-btn"
+                                                    class="p-[12px] ml-2  bg-orange-400 hover:bg-orange-500 rounded font-semibold">
+                                                    <svg class="w-4 h-4 " aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 20 20">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- nav bar right side -->
+                                <div class="flex hover:cursor-pointer items-center" id="navBarRightSide">
+                                    <button type="submit" onclick="toggle_searchMobile()" class="lg:hidden rounded-full ml-2 items-center p-1 text-sm font-medium text-white bg-orange-700 border border-orange-700
+                        hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-400">
+                                        <svg class="w-[1rem] h-[1rem] " aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </button>
+                                    <!-- user icon -->
+                                    <div onclick="logIn()" class="mr-0">
+                                        <div
+                                            class=" hover:text-orange-800 flex w-fit mx-2 text-center justify-center items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                            <div class="text-xs inline-block mx-1">เข้าสู่ระบบ</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- cart icon -->
+                                    <div style="position: relative; display: inline-block;">
+                                        <a href="cartTotal.html" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+
+                                            <span id="cart-count-badge" style="position: absolute;
+                                                top: -15px;
+                                                right: -17px;
+                                                background: orange;
+                                                color: rgb(11, 11, 11);
+                                                padding: 2px 6px;
+                                                border-radius: 50%;
+                                                font-size: 12px;
+                                                font-weight: bold;
+                                                display: none;">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- main menu -->
+                            <div id="dropdownMenuMain"
+                                class=" lg:left-auto left-0 rounded-sm  absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-[100%]  bg-white ring-1 shadow-lg ring-black/5 "
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="" role="none">
+
+                                    <div class="hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1()">
+                                        <div class="flex items-center justify-between px-4 py-2">
+                                            <a href="#" class="text-sm text-gray-700  " role="menuitem" tabindex="-1"
+                                                id="menu-item-0">แอปเปิ้ล</a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu2()">
+                                        <div class="flex items-center justify-between px-4 py-2">
+                                            <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                                id="menu-item-1">โทรศัพท์มือถือและอุปกรณ์เสริม</a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <div class="hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu3()">
+                                        <div class="flex items-center justify-between px-4 py-2">
+                                            <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                                id="menu-item-2">จอมอนิเตอร์</a>
+                                            <div class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu4()">
+                                        <div class="flex items-center justify-between px-4 py-2">
+                                            <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                                id="menu-item-2">โน็ตบุ๊ค</a>
+                                            <div class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!--minor menu1 แอปเปิ้ล -->
+                            <div id="dropdown_minor_menu1"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="http://127.0.0.1:5500/HWminiProject/%E0%B9%84%E0%B8%AD%E0%B9%82%E0%B8%9F%E0%B8%99%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%94.html"
+                                            class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">แอปเปิ้ลทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1_2()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอแพด</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1_3()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แอปเปิ้ล วอช</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1_4()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แมค</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu1_5()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">อุปกรณ์เสริมแบรนด์ Apple</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                            <!--minor menu2 -->
+                            <div id="dropdown_minor_menu2"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu2()">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">โทรศัพท์มือถือและอุปกรณ์เสริมทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu2_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">โทรศัพท์มือถือ</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu2_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">อุปกรณ์เสริมโทรศัพท์มือถือ</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu2_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">หูฟัง</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                            <!--minor menu3 -->
+                            <div id="dropdown_minor_menu3"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu3()">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">จอมอนิเตอร์ทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu3_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">จอมอนิเตอร์ทั่วไป</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu3_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">จอคอมเกมมิ่ง</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu3_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ขาจับจอมอนิเตอร์</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                            <!--minor menu4 -->
+                            <div id="dropdown_minor_menu4"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu4()">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">โน๊ตบุ๊คทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu4_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">โน๊ตบุ๊คเกมมิ่ง</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu4_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">โน๊ตบุ๊ค 2 in 1</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu4_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">โน๊ตบุ๊คบางเบา</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="toggle_dropdown_minor_menu4_1()">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">อุปกรณ์เสริมโน๊ตบุ๊ค</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                            <!--minor menu1_1 ไอโฟน-->
+                            <div id="dropdown_minor_menu1_1"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1_1() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">ไอโฟนทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            17 Pro, ไอโฟน 17 Pro Max</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            17, ไอโฟน 17 Plus</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            18e</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            16 Pro, ไอโฟน 16 Pro Max</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            16, ไอโฟน 16 Plus</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอโฟน
+                                            16e</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--minor menu1_2 ไอแพด-->
+                            <div id="dropdown_minor_menu1_2"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1_2() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">ไอแพดทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอแพดแอร์</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอแพด
+                                            มินิ</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอแพด
+                                            โปร</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--minor menu1_3 แอปเปิ้ล วอช -->
+                            <div id="dropdown_minor_menu1_3"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1_3() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">แอปเปิ้ล วอชทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แอปเปิ้ล วอช 11</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แอปเปิ้ล วอช 10</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แอปเปิ้ล อัลตร้า</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แอปเปิ้ล SE</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--minor menu1_4 แมค-->
+                            <div id="dropdown_minor_menu1_4"
+                                class=" lg:left-auto left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1_4() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">แมคทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">ไอแมค</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แมคบุ๊ค
+                                            แอร์</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แมคบุ๊ค
+                                            โปร</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">แมคบุ๊ค
+                                            มินิ</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--minor menu1_5 อุปกรณ์เสริมแบรนด์ Apple-->
+                            <div id="dropdown_minor_menu1_5"
+                                class=" lg:left-[10%] left-0 rounded-sm absolute hidden z-50 lg:-mt-2 lg:w-3/12 w-full bg-white ring-1 shadow-lg ring-black/5"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <ul>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:bg-slate-200 "
+                                        onclick="toggle_dropdown_minor_menu1_5() ">
+                                        <div class=" hover:bg-slate-200 rounded-full hover:cursor-pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <div style="width: calc(100% - 20px);"
+                                        class=" border-stone-200 rounded-full border-b-2 justify-self-center"></div>
+                                    <li
+                                        class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200">
+                                        <a href="#" class="text-sm text-gray-700 hover:text-orange-700" role="menuitem"
+                                            tabindex="-1" id="menu-item-0">อุปกรณ์เสริมแบรนด์ Apple
+                                            ทั้งหมด</a>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">อะแดปเตอร์</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">Apple
+                                            Pencil</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">สาย</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                    <li class="flex items-center justify-between px-4 py-2 hover:cursor-pointer hover:bg-slate-200"
+                                        onclick="">
+                                        <a href="#" class="text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                            id="menu-item-0">เฮดโฟนและลำโพง</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************************************************************************** -->
+            <!-- information item here -->
+
+            <!-- รายการสินค้าทั้งหมด -->
+
+            <div class="container mx-auto px-4 mt-5">
+                <div id="product-list" class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>
+                <div id="pagination" class="flex justify-center items-center gap-2 flex-wrap"></div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- before footer lg -->
+            <div class=" container my-20 lg:flex justify-center hidden ">
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg"
+                        alt=""></div>
+                <div class="">ส่งฟรีทั่วไทย
+                    <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
+                </div>
+
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg"
+                        alt=""></div>
+                <div class="">
+                    ส่งด่วนภายใน 3 ชั่วโมง
+                    <div class="text-gray-500">
+                        กรุงเทพฯ และพื้นที่ให้บริการ
+                    </div>
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg"
+                        alt=""></div>
+                <div class="">
+                    รับเองที่ร้าน
+                    <div class="text-gray-500">
+                        รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
+                    </div>
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
+                        alt=""></div>
+                <div class="">
+                    เปลี่ยน คืน ง่าย
+                    <div class="text-gray-500">
+                        ภายใน 7 วัน*
+                    </div>
+                </div>
+            </div>
+
+            <!-- before footer -->
+            <div class=" container my-5 justify-center text-center lg:hidden">
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg"
+                        alt=""></div>
+                <div class="">ส่งฟรีทั่วไทย
+                    <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
+                </div>
+
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg"
+                        alt=""></div>
+                <div class="">
+                    ส่งด่วนภายใน 3 ชั่วโมง
+                    <div class="text-gray-500">
+                        กรุงเทพฯ และพื้นที่ให้บริการ
+                    </div>
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg"
+                        alt=""></div>
+                <div class="">
+                    รับเองที่ร้าน
+                    <div class="text-gray-500">
+                        รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
+                    </div>
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
+                        alt=""></div>
+                <div class="">
+                    เปลี่ยน คืน ง่าย
+                    <div class="text-gray-500">
+                        ภายใน 7 วัน*
+                    </div>
+                </div>
+            </div>
+            <!-- *****Contact Us lg ********-->
+            <div class="container border-t-[2px] border-t-gray-300 mb-10 lg:flex hidden justify-between">
+                <div class="mr-10">
+                    <div class="mt-10 flex">
+                        <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
+                        <div class="flex lg:text-xl text-justify items-center">
+                            <p class="font-bold text-orange-600  lg:pl-2">O</p>
+                            <p class="font-bold text-orange-700 ">R</p>
+                            <p class="font-bold text-orange-800 ">A</p>
+                            <p class="font-bold text-green-700 ">N</p>
+                            <p class="font-bold text-green-800 ">G</p>
+                            <p class="font-bold text-green-900 ">E</p>
+                            <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
+                            <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                        </div>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
+                    </div>
+                    <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
+                        <div class="px-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
+
+                        <div>ค้นหาร้านใกล้คุณ</div>
+                    </button>
+                    <div class="flex my-2">
+                        <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
+                                alt=""></a>
+                        <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
+                                alt=""></a>
+
+                    </div>
+                </div>
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold"><a href="">เกี่ยวกับ ORANGE iT</a></div>
+                    <div class="my-2"><a href="">ติดต่อเรา</a></div>
+                    <div class="my-2"><a href="">เกี่ยวกับ ORN.in.th</a></div>
+                    <div class="my-2"><a href="">สมัครสมาชิก 7ClUB PLUS</a></div>
+                    <div class="my-2"><a href="">ข้อกำหนดและเงื่อนไข</a></div>
+                    <div class="my-2"><a href="">ร่วมงานกับเรา</a></div>
+                </div>
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold"><a href="">บริการ</a></div>
+                    <div class="my-2"><a href="">การยกเลิกรายการสั่งซื้อสินค้า</a></div>
+                    <div class="my-2"><a href="">นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></div>
+                    <div class="my-2"><a href="">การจัดส่งสินค้า</a></div>
+                    <div class="my-2"><a href="">การคืนสินค้า</a></div>
+                    <div class="my-2"><a href="">ช้อปแล้วรับสินค้าที่ร้าน</a></div>
+                </div>
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold">Verified by</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1"
+                            src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
+                        <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
+                    </div>
+                    <div class="my-2 font-bold">ติดตามเรา</div>
+                    <div class="flex">
+                        <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
+                                alt=""></a>
+                    </div>
+                    <div class="my-2 font-bold">บริการจัดส่ง</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="border-[1px] border-gray-300 mx-5 my-3 lg:hidden"></div>
+            <!-- *****Contact Us********-->
+            <div class="container mb-10 justify-between lg:hidden">
+                <div class="mr-10">
+                    <div class="mt-10 flex">
+                        <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
+                        <div class="flex lg:text-xl text-justify items-center">
+                            <p class="font-bold text-orange-600  lg:pl-2">O</p>
+                            <p class="font-bold text-orange-700 ">R</p>
+                            <p class="font-bold text-orange-800 ">A</p>
+                            <p class="font-bold text-green-700 ">N</p>
+                            <p class="font-bold text-green-800 ">G</p>
+                            <p class="font-bold text-green-900 ">E</p>
+                            <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
+                            <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                        </div>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
+                    </div>
+                    <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
+                        <div class="px-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
+
+                        <div>ค้นหาร้านใกล้คุณ</div>
+                    </button>
+                    <div class="flex my-2">
+                        <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
+                                alt=""></a>
+                        <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
+                                alt=""></a>
+
+                    </div>
+                </div>
+
+
+                <ul class="menu w-full text-xs mt-5">
+                    <li>
+                        <details>
+                            <summary class="font-bold flex justify-between p-2 bg-gray-200 rounded-md">ช่วยเหลือ &
+                                ข้อมูลเพิ่มเติม</summary>
+                            <ul class="text-gray-700">
+                                <li><a>ติดต่อเรา</a></li>
+                                <li><a>เกี่ยวกับ ORN.in.th</a></li>
+                                <li><a>สมัครสมาชิก 7ClUB PLUS</a></li>
+                                <li><a>ข้อกำหนดและเงื่อนไข</a></li>
+                                <li><a>ร่วมงานกับเรา</a></li>
+                                <li><a>การยกเลิกรายการสั่งซื้อสินค้า</a></li>
+                                <li><a>นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></li>
+                                <li><a>การจัดส่งสินค้า</a></li>
+                                <li><a>การคืนสินค้า</a></li>
+                                <li><a>ช้อปแล้วรับสินค้าที่ร้าน</a></li>
+
+                            </ul>
+                    </li>
+                </ul>
+
+                <div class="mt-5 text-xs text-gray-700">
+                    <div class="my-2 font-bold">Verified by</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1"
+                            src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
+                        <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
+                    </div>
+                    <div class="my-2 font-bold">ติดตามเรา</div>
+                    <div class="flex">
+                        <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
+                                alt=""></a>
+                    </div>
+                    <div class="my-2 font-bold">บริการจัดส่ง</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- footer lg-->
+            <footer class="m-0 py-1 bg-black text-xs hidden lg:block">
+                <div class="container flex justify-between text-white">
+                    <p>© Copyright 2025 RNG7 Public Company Limited All Rights Reserved. </p>
+                    <div class="flex">
+
+                        <a href="#" class="px-1">ข้อกำหนดการใช้</a>
+                        <div class="border border-gray-500"></div>
+                        <a href="#" class="px-1 ">นโยบายความเป็นส่วนตัว</a>
+                        <div class="border border-gray-500"></div>
+                        <a href="#" class="px-1 ">การจัดการ Cookies</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer -->
+            <footer class="m-0 py-1 bg-black text-xs lg:hidden">
+                <div class="container flex justify-center text-white mb-2">
+                    <a href="#" class="px-1">ข้อกำหนดการใช้</a>
+                    <div class="border border-gray-500"></div>
+                    <a href="#" class="px-1 ">นโยบายความเป็นส่วนตัว</a>
+                    <div class="border border-gray-500"></div>
+                    <a href="#" class="px-1 ">การจัดการ Cookies</a>
+                </div>
+                <div class="container flex justify-center text-white text-center">© Copyright 2025 RNG7 Public
+                    Company
+                    Limited All Rights Reserved. </div>
+            </footer>
+            <!-- log in -->
+            <div class="absolute top-0 w-[100vw] h-[100vh] bg-gray-500/75 transition-opacity hidden" onclick="logIn()"
+                id="bgLogIn"></div>
+            <div class="absolute top-[10%] lg:top-[0px] justify-center text-center w-fit mx-auto left-0 right-0 hidden"
+                id="log-in">
+                <section class="">
+                    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                        <div
+                            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                            <div class="flex items-center justify-center mt-10"> <a href="#"
+                                    class="flex items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                                    <img class="w-15 mr-2" src="orange logo.png" alt="logo">
+
+                                </a>
+
+                            </div>
+
+                            <p class="px-20 text-xs">Welcome to RNG ORANGE Online Store</p>
+                            <div class="px-7 pb-10">
+                                <h1
+                                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                    เข้าสู่ระบบ
+                                </h1>
+                                <form class="space-y-4 md:space-y-6" action="#">
+                                    <div>
+                                        <label for="email"
+                                            class="block mb-2 text-xs font-medium text-gray-900 dark:text-white">
+                                            อีเมล</label>
+                                        <input type="email" name="email" id="email"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="name@company.com" required="">
+                                    </div>
+                                    <div>
+                                        <label for="password"
+                                            class="block mb-2 text-xs font-medium text-gray-900 dark:text-white">รหัสผ่าน</label>
+                                        <input type="password" name="password" id="password" placeholder="••••••••"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required="">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="remember" aria-describedby="remember" type="checkbox"
+                                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                                                    required="">
+                                            </div>
+                                            <div class="ml-3 text-sm">
+                                                <label for="remember" class="text-gray-500 dark:text-gray-300">Remember
+                                                    me</label>
+                                            </div>
+                                        </div>
+                                        <a href="#"
+                                            class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">ลืมรหัสผ่าน?</a>
+                                    </div>
+                                    <button type="submit"
+                                        class=" w-full text-white bg-orange-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
+                                        in</button>
+                                    <p class="mt-5 text-sm font-light text-gray-500 dark:text-gray-400">
+                                        ยังไม่มีบัญชีผู้ใช้?
+                                        <a href="#"
+                                            class="font-medium text-primary-600 hover:underline dark:text-primary-500">สมัครสมาชิกใหม่</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- update ตะกร้าสินค้า -->
+    <div class="container mt-5 hidden">
+        <div class="container mt-5">
+            <div class="flex items-center justify-between mb-4" id="cart-controls">
+                <div class="flex items-center">
+                    <input type="checkbox" id="select-all" class="mr-2 w-4 h-4"
+                        onchange="toggleSelectAll(this.checked)" />
+                    <label for="select-all" class="font-medium">เลือกทั้งหมด</label>
+                </div>
+            </div>
+
+            <div id="cart-items"></div>
+            <div class="flex justify-between items-center space-x-2">
+                <button id="clear-btn" onclick="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded shadow">
+                    🗑️ ลบสินค้าทั้งหมด
+                </button>
+
+                <button id="checkout-btn" onclick="checkoutSelected()"
+                    class="bg-green-600 text-white px-4 py-2 rounded shadow">
+                    💳 ชำระสินค้าที่เลือก
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- ตรวจสอบเมื่อขนาดหน้าจอเปลี่ยน -->
+    <div class="opacity-0" id="size-output"></div>
+    <script>
+        function reportWindowSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            let x1 = document.getElementById("resize");
+            let x = document.getElementById("searchMobile");
+            let y = document.getElementById("navBarLeftSide");
+            let z1 = document.getElementById("navBarRightSide");
+            let isMainPresent = x.classList.contains("hidden");
+            let isMainPresent2 = y.classList.contains("hidden");
+            let isMainPresent3 = z1.classList.contains("hidden");
+            document.getElementById("size-output").textContent =
+                `ขนาดหน้าจอ: ${width} x ${height} พิกเซล`;
+            if (w > 1024) {
+                // x1.style = "background:blue; height: 100px; width: 100px;";
+                if (isMainPresent) {
+
+                } else {
+                    x.classList.add("hidden");
+                }
+                if (isMainPresent2) {
+                    y.classList.remove("hidden");
+                    z1.classList.remove("hidden");
+                } else {
+
+                }
+            }
+        }
+        window.addEventListener("resize", reportWindowSize);
+        reportWindowSize();
+
+    </script>
+    <script src="main.js"></script>
+    <script src="items.js"></script>
+    <script src="Allproduct.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
