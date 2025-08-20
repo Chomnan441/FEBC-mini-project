@@ -249,6 +249,9 @@ function logIn() {
     let x = document.getElementById("log-in");
     let y = document.getElementById("bgLogIn");
     let z1 = document.querySelector("body");
+
+    if (!x || !y || !z1) return; // ป้องกัน error ถ้า element ไม่เจอ
+
     let isMainPresent = z1.classList.contains("overflow-hidden");
     if (isMainPresent) {
         z1.classList.remove("overflow-hidden");
