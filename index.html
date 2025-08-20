@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <style>
     /* Menu bar */
@@ -258,10 +259,7 @@
 </style>
 
 <body class="bg-gray-100" style="font-family: Noto Sans Thai, sans-serif;">
-    <div class="relative">
-        <!-- ตรวจสอบเมื่อขนาดหน้าจอเปลี่ยน -->
-        <div class="opacity-0 absolute top-5" id="size-output"></div>
-        <!-- ****** -->
+    <div class="relative w-[100vw] h-[100vh]">
         <div class="bg-gray-100">
             <div class="lg:h-[65px] h-[66px]">
                 <div class="fixed top-0 start-0 z-50 flex justify-between w-full bg-gray-100">
@@ -1099,355 +1097,520 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ********************************************************************************************************************************** -->
-        <!-- carousel part -->
-        <div class="w-full relative">
+            <!-- ********************************************************************************************************************************** -->
+            <!-- information item here -->
+            <div class="w-full relative">
 
-            <div class="mySlides">
-                <img src="JBLBrandFair-2000x720-010425_150425-homepage_desktop_banner_medium.webp" style="width:100%">
+                <div class="mySlides">
+                    <img src="JBLBrandFair-2000x720-010425_150425-homepage_desktop_banner_medium.webp"
+                        style="width:100%">
 
+                </div>
+
+                <div class="mySlides">
+                    <img src="SmartphoneCodeDiscount-2000x720-080425_210425-homepage_desktop_banner_medium.webp"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides ">
+                    <img src="SummerSongkran-2000x720-160325_300425-homepage_desktop_banner_medium.webp"
+                        style="width:100%">
+
+                </div>
+
+                <div class="mySlides">
+                    <img src="PromotioniPadBundle-2000x720-010425_300425-homepage_desktop_banner_medium.webp"
+                        style="width:100%">
+
+                </div>
+                <a class="cursor-pointer absolute top-1/2 w-auto p-[16px] mt-[-22px] text-white font-bold text-[18px] rounded-r hover:bg-black hover:opacity-50 transition ease-in-out duration-500 select-none"
+                    onclick="plusSlides(-1)">❮</a>
+                <a class="cursor-pointer absolute top-1/2 right-0 w-auto p-[16px] mt-[-22px] text-white font-bold text-[18px] rounded-l hover:bg-black hover:opacity-50 transition ease-in-out duration-500 select-none"
+                    onclick="plusSlides(1)">❯</a>
+
+
+                <div class="absolute right-[45%] bottom-0 opacity-80">
+                    <span
+                        class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
+                        onclick="currentSlide(1)"></span>
+                    <span
+                        class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
+                        onclick="currentSlide(2)"></span>
+                    <span
+                        class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
+                        onclick="currentSlide(3)"></span>
+                    <span
+                        class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500 rounded-[50%]"
+                        onclick="currentSlide(4)"></span>
+                </div>
             </div>
 
-            <div class="mySlides">
-                <img src="SmartphoneCodeDiscount-2000x720-080425_210425-homepage_desktop_banner_medium.webp"
-                    style="width:100%">
-            </div>
-
-            <div class="mySlides ">
-                <img src="SummerSongkran-2000x720-160325_300425-homepage_desktop_banner_medium.webp" style="width:100%">
-
-            </div>
-
-            <div class="mySlides">
-                <img src="PromotioniPadBundle-2000x720-010425_300425-homepage_desktop_banner_medium.webp"
-                    style="width:100%">
-
-            </div>
-            <a class="cursor-pointer absolute top-1/2 w-auto p-[16px] mt-[-22px] text-white font-bold text-[18px] rounded-r hover:bg-black hover:opacity-50 transition ease-in-out duration-500 select-none"
-                onclick="plusSlides(-1)">❮</a>
-            <a class="cursor-pointer absolute top-1/2 right-0 w-auto p-[16px] mt-[-22px] text-white font-bold text-[18px] rounded-l hover:bg-black hover:opacity-50 transition ease-in-out duration-500 select-none"
-                onclick="plusSlides(1)">❯</a>
-
-
-            <div class="absolute right-[45%] bottom-0 opacity-80">
-                <span
-                    class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
-                    onclick="currentSlide(1)"></span>
-                <span
-                    class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
-                    onclick="currentSlide(2)"></span>
-                <span
-                    class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500  rounded-[50%]"
-                    onclick="currentSlide(3)"></span>
-                <span
-                    class="dot cursor-pointer h-2 w-2 lg:h-[15px]  lg:w-[15px] my-[2px] bg-zinc-200 inline-block ease-in-out duration-500 rounded-[50%]"
-                    onclick="currentSlide(4)"></span>
-            </div>
-        </div>
-        <div class="container ">
-            <!-- heading hot sale -->
-            <div class="lg:mt-10 mt-5 flex lg:mb-5">
-                <div style="font-family: Noto Sans Thai, sans-serif; "
-                    class="relative text-orange-900 underline lg:text-2xl">
-                    สินค้าขายดีประจำเดือนนี้
-                    <div>
-                        <div class="fire absolute top-1 -right-10 lg:block hidden">
-                            <div class="fire-left">
-                                <div class="main-fire"></div>
-                                <div class="particle-fire"></div>
-                            </div>
-                            <div class="fire-center">
-                                <div class="main-fire"></div>
-                                <div class="particle-fire"></div>
-                            </div>
-                            <div class="fire-right">
-                                <div class="main-fire"></div>
-                                <div class="particle-fire"></div>
-                            </div>
-                            <div class="fire-bottom">
-                                <div class="main-fire"></div>
+            <div class="container ">
+                <!-- heading hot sale -->
+                <div class="lg:mt-10 mt-5 flex lg:mb-5">
+                    <div style="font-family: Noto Sans Thai, sans-serif; "
+                        class="relative text-orange-900 underline lg:text-2xl">
+                        สินค้าขายดีประจำเดือนนี้
+                        <div>
+                            <div class="fire absolute top-1 -right-10 lg:block hidden">
+                                <div class="fire-left">
+                                    <div class="main-fire"></div>
+                                    <div class="particle-fire"></div>
+                                </div>
+                                <div class="fire-center">
+                                    <div class="main-fire"></div>
+                                    <div class="particle-fire"></div>
+                                </div>
+                                <div class="fire-right">
+                                    <div class="main-fire"></div>
+                                    <div class="particle-fire"></div>
+                                </div>
+                                <div class="fire-bottom">
+                                    <div class="main-fire"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-            <!-- Top_hot_sale_Lg-->
-            <div class=" w-full relative lg:block hidden">
-                <div class="carousel w-full px-2">
-                    <div
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="absolute -top-1/2 " id="slideHot_1"></div>
-                        <div class="m-[2%]">
-                            <div>
-                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                    <a href="cartTotal.html" target="_blank">
-                                    <img src="https://media-cdn.bnn.in.th/454722/lenono-tablet-tab-m11-zadb0377th-luna-grey-1.jpg"
-                                        class="w-full p-[11%] rounded-[40%]" />
-                                    </a>
+                </div>
+                <!-- Top_hot_sale_Lg-->
+                <div class=" w-full relative lg:block hidden">
+                    <div class="carousel w-full px-2">
+                        <div
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="absolute -top-1/2 " id="slideHot_1"></div>
+                            <div class="m-[2%]">
+                                <div>
+                                    <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                        <a href="cartTotal.html" target="_blank">
+                                            <img src="https://media-cdn.bnn.in.th/454722/lenono-tablet-tab-m11-zadb0377th-luna-grey-1.jpg"
+                                                class="w-full p-[11%] rounded-[40%]" />
+                                        </a>
+                                    </div>
+                                    <div class="">
+                                        <p class="font-medium text-[12px]">แท็บเล็ต Lenovo Tab M11 (8+128GB) ZADB0377TH
+                                            Luna
+                                            Gray</p>
+                                        <p class="text-[11px] text-gray-500">Screen Size : 11 inch | RAM 8GB / ROM 128GB
+                                            |
+                                            Android 13 | 7,040 mAh
+                                            |
+                                            Warranty : 1 Year</p>
+                                        <p class="text-[11px] text-red-600">฿7,990</p>
+                                    </div>
                                 </div>
-                                <div class="">
+                            </div>
+                            <div
+                                class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            </div>
+                        </div>
+                        <div id="slideHot_2"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%]">
+                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/178126/zircon-ups-ax-1000va-550w-2-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[40%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">เครื่องสำรองไฟ ZIRCON UPS AX-1000VA/550W</p>
+                                    <p class="text-[11px] text-gray-500">Capacity: 1000 VA / 550 W | Waveform Type:
+                                        Modified
+                                        Sine Wave</p>
+                                    <p class="text-[11px] text-red-600">฿1,490</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideHot_3"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%]">
+                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/387559/Xiaomi-Curved-Monitor-G34WQi-VA-2K-180Hz-1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[40%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">จอมอนิเตอร์ Xiaomi Curved Gaming Monitor G34WQi
+                                        (VA
+                                        2K 180Hz)</p>
+                                    <p class="text-[11px] text-gray-500">
+                                        34.0 inch | 3440 x 1440 @ 180 Hz | 1 ms | 21:9 | VA | AMD FreeSync Premium
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿8,990</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="slideHot_4"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%]">
+                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/353423/lg-24mr400-b-1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[35%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+                                        จอมอนิเตอร์ LG 24MR400-B FHD 3-Side Borderless (IPS 100Hz FreeSync)
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        23.8 inch | Panel: IPS | 1920 x 1080 @ 100 Hz | 1200:1 | 250 cd/m2 | Interface:
+                                        1x
+                                        D-SUB, 1x HDMI
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿2,890</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="slideHot_5"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%] ">
+                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/475528/oppo-enco-buds3-pro-graphite-grey-01-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[40%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+                                        หูฟังไร้สาย OPPO Enco Air4 Pro Midnight Black
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        รองรับ Bluetooth 5.4
+                                        มีระบบกันน้ำได้ดีเยี่ยม
+                                        หูฟังเเบตเตอรี่ใช้งานได้ยาวนาน
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿2,999</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="absolute -top-1/2 -right-10" id="slideHot_6"></div>
+                            <div class="m-[2%] ">
+                                <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/349997/JBL-Flip-6-Red-1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[40%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+                                        ลำโพงบลูทูธ JBL Flip 6 Red
+                                    </p>
+                                    <p class="text-[11px] text-red-600"> ฿4,670
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute  top-1/2  bg-yellow-600 rounded-full opacity-80">
+                        <a href="#slideHot_1" class="btn btn-circle">❮</a>
+                    </div>
+
+                    <div class=" absolute right-0 top-1/2 bg-yellow-600 rounded-full opacity-80">
+                        <a href="#slideHot_6" class="btn btn-circle ">❯</a>
+                    </div>
+
+                </div>
+                <!-- Top_hot_sale -->
+                <div class="block lg:hidden ">
+                    <div class="carousel w-full">
+                        <div id="item1" class="carousel-item w-full">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class="m-[3%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/454722/lenono-tablet-tab-m11-zadb0377th-luna-grey-1.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%]">
                                     <p class="font-medium text-[12px]">แท็บเล็ต Lenovo Tab M11 (8+128GB) ZADB0377TH
                                         Luna
                                         Gray</p>
                                     <p class="text-[11px] text-gray-500">Screen Size : 11 inch | RAM 8GB / ROM 128GB
                                         |
-                                        Android 13 | 7,040 mAh
-                                        |
+                                        Android 13 | 7,040 mAh |
                                         Warranty : 1 Year</p>
                                     <p class="text-[11px] text-red-600">฿7,990</p>
                                 </div>
                             </div>
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/178126/zircon-ups-ax-1000va-550w-2-square_medium.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">เครื่องสำรองไฟ ZIRCON UPS AX-1000VA/550W</p>
+                                    <p class="text-[11px] text-gray-500">Capacity: 1000 VA / 550 W | Waveform Type:
+                                        Modified
+                                        Sine Wave</p>
+                                    <p class="text-[11px]  text-red-600">฿1,490</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+
+                        <div id="item2" class="carousel-item w-full">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/387559/Xiaomi-Curved-Monitor-G34WQi-VA-2K-180Hz-1-square_medium.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">จอมอนิเตอร์ Xiaomi Curved Gaming Monitor
+                                        G34WQi
+                                        (VA
+                                        2K 180Hz)</p>
+                                    <p class="text-[11px] text-gray-500">
+                                        34.0 inch | 3440 x 1440 @ 180 Hz | 1 ms | 21:9 | VA | AMD FreeSync Premium
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿8,990</p>
+                                </div>
+                            </div>
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/353423/lg-24mr400-b-1-square_medium.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+                                        จอมอนิเตอร์ LG 24MR400-B FHD 3-Side Borderless (IPS 100Hz FreeSync)
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        23.8 inch | Panel: IPS | 1920 x 1080 @ 100 Hz | 1200:1 | 250 cd/m2 |
+                                        Interface:
+                                        1x
+                                        D-SUB, 1x HDMI
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿2,890</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="item3" class="carousel-item w-full relative">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/475528/oppo-enco-buds3-pro-graphite-grey-01-square_medium.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+                                        หูฟังไร้สาย OPPO Enco Air4 Pro Midnight Black
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        รองรับ Bluetooth 5.4
+                                        มีระบบกันน้ำได้ดีเยี่ยม
+                                        หูฟังเเบตเตอรี่ใช้งานได้ยาวนาน
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿2,999</p>
+                                </div>
+                            </div>
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/349997/JBL-Flip-6-Red-1-square_medium.jpg"
+                                        class="w-full p-[11%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+                                        ลำโพงบลูทูธ JBL Flip 6 Red
+                                    </p>
+                                    <p class="text-[11px] text-red-600"> ฿4,670
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="slideHot_2"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/178126/zircon-ups-ax-1000va-550w-2-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[40%]" />
-                            </div>
+                    <div class="flex w-full justify-center gap-2 py-2">
+                        <a href="#item1" class="btn btn-xs border-2">1</a>
+                        <a href="#item2" class="btn btn-xs border-2">2</a>
+                        <a href="#item3" class="btn btn-xs border-2">3</a>
+
+                    </div>
+                </div>
+                <!-- heading hot Ai phone sale -->
+                <div class="lg:mt-10 mt-5 lg:mb-5">
+                    <div style="font-family: Noto Sans Thai, sans-serif; "
+                        class=" text-orange-900 underline lg:text-2xl inline-block ">
+
+                        เทอมใหม่ จัดมือถือ AI สิครับ
+                    </div>
+                    <div style="font-family: Noto Sans Thai, sans-serif; " class=" lg:text-2xl inline-block">
+
+                        😎
+                    </div>
+                </div>
+                <!-- New term new AI phone lg-->
+                <div class=" w-full relative lg:block hidden">
+                    <div class="carousel w-full px-2">
+
+                        <div id="slideHot_AI_1"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="absolute -top-1/2 " id="slideHot_AI_1_1"></div>
                             <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">เครื่องสำรองไฟ ZIRCON UPS AX-1000VA/550W</p>
-                                <p class="text-[11px] text-gray-500">Capacity: 1000 VA / 550 W | Waveform Type:
-                                    Modified
-                                    Sine Wave</p>
-                                <p class="text-[11px] text-red-600">฿1,490</p>
+                                <div>
+                                    <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
+                                        <a href="Item1.html" target="_blank">
+                                            <img src="https://media-cdn.bnn.in.th/460537/samsung-galaxy-s25-ultra-12256-titanium-black-5g-1-square_medium.jpg"
+                                                class="w-[100%] p-[11%] rounded-[100%]" />
+                                        </a>
+                                    </div>
+                                    <div class="">
+                                        <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy S25 Ultra
+                                            (12+512GB)
+                                            Titanium Black (5G)
+                                            Gray</p>
+                                        <p class="text-[11px] text-gray-500">6.9 inch | Snapdragon 8 Elite | Android
+                                            15
+                                            | 5,000 mAh | Warranty : 1 Year
+                                            | Warranty : 1 Year</p>
+                                        <p class="text-[11px] text-red-600">฿46,900</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                             </div>
                         </div>
-                    </div>
-                    <div id="slideHot_3"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/387559/Xiaomi-Curved-Monitor-G34WQi-VA-2K-180Hz-1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[40%]" />
-                            </div>
+                        <div id="slideHot_AI_2"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
                             <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">จอมอนิเตอร์ Xiaomi Curved Gaming Monitor G34WQi
-                                    (VA
-                                    2K 180Hz)</p>
-                                <p class="text-[11px] text-gray-500">
-                                    34.0 inch | 3440 x 1440 @ 180 Hz | 1 ms | 21:9 | VA | AMD FreeSync Premium
-                                </p>
-                                <p class="text-[11px] text-red-600">฿8,990</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="slideHot_4"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/353423/lg-24mr400-b-1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[35%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-                                    จอมอนิเตอร์ LG 24MR400-B FHD 3-Side Borderless (IPS 100Hz FreeSync)
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    23.8 inch | Panel: IPS | 1920 x 1080 @ 100 Hz | 1200:1 | 250 cd/m2 | Interface:
-                                    1x
-                                    D-SUB, 1x HDMI
-                                </p>
-                                <p class="text-[11px] text-red-600">฿2,890</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="slideHot_5"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%] ">
-                            <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/475528/oppo-enco-buds3-pro-graphite-grey-01-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[40%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-                                    หูฟังไร้สาย OPPO Enco Air4 Pro Midnight Black
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    รองรับ Bluetooth 5.4
-                                    มีระบบกันน้ำได้ดีเยี่ยม
-                                    หูฟังเเบตเตอรี่ใช้งานได้ยาวนาน
-                                </p>
-                                <p class="text-[11px] text-red-600">฿2,999</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="absolute -top-1/2 -right-10" id="slideHot_6"></div>
-                        <div class="m-[2%] ">
-                            <div class="m-[2%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/349997/JBL-Flip-6-Red-1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[40%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-                                    ลำโพงบลูทูธ JBL Flip 6 Red
-                                </p>
-                                <p class="text-[11px] text-red-600"> ฿4,670
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute  top-1/2  bg-yellow-600 rounded-full opacity-80">
-                    <a href="#slideHot_1" class="btn btn-circle">❮</a>
-                </div>
-
-                <div class=" absolute right-0 top-1/2 bg-yellow-600 rounded-full opacity-80">
-                    <a href="#slideHot_6" class="btn btn-circle ">❯</a>
-                </div>
-
-            </div>
-            <!-- Top_hot_sale -->
-            <div class="block lg:hidden ">
-                <div class="carousel w-full">
-                    <div id="item1" class="carousel-item w-full">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class="m-[3%]  bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/454722/lenono-tablet-tab-m11-zadb0377th-luna-grey-1.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%]">
-                                <p class="font-medium text-[12px]">แท็บเล็ต Lenovo Tab M11 (8+128GB) ZADB0377TH
-                                    Luna
-                                    Gray</p>
-                                <p class="text-[11px] text-gray-500">Screen Size : 11 inch | RAM 8GB / ROM 128GB
-                                    |
-                                    Android 13 | 7,040 mAh |
-                                    Warranty : 1 Year</p>
-                                <p class="text-[11px] text-red-600">฿7,990</p>
-                            </div>
-                        </div>
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/178126/zircon-ups-ax-1000va-550w-2-square_medium.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">เครื่องสำรองไฟ ZIRCON UPS AX-1000VA/550W</p>
-                                <p class="text-[11px] text-gray-500">Capacity: 1000 VA / 550 W | Waveform Type:
-                                    Modified
-                                    Sine Wave</p>
-                                <p class="text-[11px]  text-red-600">฿1,490</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="item2" class="carousel-item w-full">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/387559/Xiaomi-Curved-Monitor-G34WQi-VA-2K-180Hz-1-square_medium.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">จอมอนิเตอร์ Xiaomi Curved Gaming Monitor
-                                    G34WQi
-                                    (VA
-                                    2K 180Hz)</p>
-                                <p class="text-[11px] text-gray-500">
-                                    34.0 inch | 3440 x 1440 @ 180 Hz | 1 ms | 21:9 | VA | AMD FreeSync Premium
-                                </p>
-                                <p class="text-[11px] text-red-600">฿8,990</p>
-                            </div>
-                        </div>
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/353423/lg-24mr400-b-1-square_medium.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
-                                    จอมอนิเตอร์ LG 24MR400-B FHD 3-Side Borderless (IPS 100Hz FreeSync)
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    23.8 inch | Panel: IPS | 1920 x 1080 @ 100 Hz | 1200:1 | 250 cd/m2 |
-                                    Interface:
-                                    1x
-                                    D-SUB, 1x HDMI
-                                </p>
-                                <p class="text-[11px] text-red-600">฿2,890</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="item3" class="carousel-item w-full relative">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/475528/oppo-enco-buds3-pro-graphite-grey-01-square_medium.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
-                                    หูฟังไร้สาย OPPO Enco Air4 Pro Midnight Black
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    รองรับ Bluetooth 5.4
-                                    มีระบบกันน้ำได้ดีเยี่ยม
-                                    หูฟังเเบตเตอรี่ใช้งานได้ยาวนาน
-                                </p>
-                                <p class="text-[11px] text-red-600">฿2,999</p>
-                            </div>
-                        </div>
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frame_lable.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/349997/JBL-Flip-6-Red-1-square_medium.jpg"
-                                    class="w-full p-[11%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
-                                    ลำโพงบลูทูธ JBL Flip 6 Red
-                                </p>
-                                <p class="text-[11px] text-red-600"> ฿4,670
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex w-full justify-center gap-2 py-2">
-                    <a href="#item1" class="btn btn-xs border-2">1</a>
-                    <a href="#item2" class="btn btn-xs border-2">2</a>
-                    <a href="#item3" class="btn btn-xs border-2">3</a>
-
-                </div>
-            </div>
-            <!-- heading hot Ai phone sale -->
-            <div class="lg:mt-10 mt-5 lg:mb-5">
-                <div style="font-family: Noto Sans Thai, sans-serif; "
-                    class=" text-orange-900 underline lg:text-2xl inline-block ">
-
-                    เทอมใหม่ จัดมือถือ AI สิครับ
-                </div>
-                <div style="font-family: Noto Sans Thai, sans-serif; " class=" lg:text-2xl inline-block">
-
-                    😎
-                </div>
-            </div>
-            <!-- New term new AI phone lg-->
-            <div class=" w-full relative lg:block hidden">
-                <div class="carousel w-full px-2">
-
-                    <div id="slideHot_AI_1"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="absolute -top-1/2 " id="slideHot_AI_1_1"></div>
-                        <div class="m-[2%]">
-                            <div>
                                 <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/472890/samsung-smartphone-galaxy-a56-8128gb-black-5g-08-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[100%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) Black
+                                        (5G)
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">6.7 inch | Exynose 1580 | RAM 8GB / ROM
+                                        128GB |
+                                        Android 15 | 5,000 mAh | Warranty 1 Year</p>
+                                    <p class="text-[11px] text-red-600">฿13,999</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slideHot_AI_3"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%]">
+                                <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/363364/Samsung--Galaxy-S24-ULTRA--TITANIUM-5G-1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[100%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+                                        สมาร์ทโฟน Samsung Galaxy S24 ULTRA (12+256GB) TITANIUM (5G)
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+
+                                        6.8 inch | Snapdragon 8 Gen 3 | Android 14, One UI Core 6.1 | 5,000 mAh |
+                                        Warranty : 1 Year
+
+                                    </p>
+                                    <p class="text-[11px] text-red-600">
+                                        ฿32,900
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="slideHot_AI_4"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%]">
+                                <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/429014/Samsung-Smartphone-Galaxy-S24-FE-Light-Blue--1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[100%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy S24 FE (8+256GB) Light Blue
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+
+                                        6.7 inch l RAM 8GB / ROM 256GB l Android 14 l 4,700 mAh l Warranty : 1 Year
+
+                                    </p>
+                                    <p class="text-[11px] text-red-600">
+                                        ฿20,900
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="slideHot_AI_5"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="m-[2%] ">
+                                <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/472900/samsung-smartphone-galaxy-a56-8128gb-green-5g-08-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[100%]" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) GREEN (5G)
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+
+                                        6.7 inch | Exynose 1580 | RAM 8GB / ROM 128GB | Android 15 | 5,000 mAh |
+                                        Warranty 1 Year
+
+                                    </p>
+                                    <p class="text-[11px] text-red-600">
+                                        ฿13,999
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="slideHot_AI_6"
+                            class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
+                            <div class="absolute -right-10 -top-1/2" id="slideHot_AI_6_1"></div>
+                            <div class="m-[2%] ">
+                                <div
+                                    class="m-[2%] bg-size-[75%] bg-center bg-no-repeat bg-[url(https://media-cdn.bnn.in.th/269611/Samsung-Smartphone-Galaxy-S23-Ultra-Phantom-Black-5G-1-square_medium.jpg)]">
+                                    <img src="frameAI.webp" class="w-full" />
+                                </div>
+                                <div class="m-[2%]">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy S23 Ultra (8+256GB) Phantom Black (5G)
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+
+
+                                        6.8 inch | Snapdragon 8 Gen 2 | RAM 8GB / ROM 256GB | Android 13, One UI
+                                        Core
+                                        5.1 | 5,000 mAh | Color : Phantom Black | Warranty : 1 Year
+
+
+                                    </p>
+                                    <p class="text-[11px] text-red-600">
+                                        ฿31,900
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute  top-1/2  bg-yellow-600 rounded-full opacity-80">
+                        <a href="#slideHot_AI_1_1" class="btn btn-circle">❮</a>
+                    </div>
+
+                    <div class=" absolute right-0 top-1/2 bg-yellow-600 rounded-full opacity-80">
+                        <a href="#slideHot_AI_6_1" class="btn btn-circle ">❯</a>
+                    </div>
+
+                </div>
+                <!-- Top_hot_AI_Phone_sale -->
+                <div class="block lg:hidden ">
+                    <div class="carousel w-full">
+                        <div id="item_AI_1" class="carousel-item w-full">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class="m-[3%]  bg-[url(frameai.webp)] bg-cover w-fit">
                                     <a href="Item1.html" target="_blank">
-                                    <img src="https://media-cdn.bnn.in.th/460537/samsung-galaxy-s25-ultra-12256-titanium-black-5g-1-square_medium.jpg"
-                                        class="w-[100%] p-[11%] rounded-[100%]" />
+                                        <img src="https://media-cdn.bnn.in.th/460537/samsung-galaxy-s25-ultra-12256-titanium-black-5g-1-square_medium.jpg"
+                                            class="w-full p-[11%] rounded-[70%]" />
                                     </a>
                                 </div>
-                                <div class="">
+                                <div class="m-[3%]">
                                     <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy S25 Ultra
                                         (12+512GB)
                                         Titanium Black (5G)
@@ -1459,630 +1622,508 @@
                                     <p class="text-[11px] text-red-600">฿46,900</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        </div>
-                    </div>
-                    <div id="slideHot_AI_2"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/472890/samsung-smartphone-galaxy-a56-8128gb-black-5g-08-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[100%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) Black
-                                    (5G)
-                                </p>
-                                <p class="text-[11px] text-gray-500">6.7 inch | Exynose 1580 | RAM 8GB / ROM
-                                    128GB |
-                                    Android 15 | 5,000 mAh | Warranty 1 Year</p>
-                                <p class="text-[11px] text-red-600">฿13,999</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="slideHot_AI_3"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/363364/Samsung--Galaxy-S24-ULTRA--TITANIUM-5G-1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[100%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-                                    สมาร์ทโฟน Samsung Galaxy S24 ULTRA (12+256GB) TITANIUM (5G)
-                                </p>
-                                <p class="text-[11px] text-gray-500">
 
-                                    6.8 inch | Snapdragon 8 Gen 3 | Android 14, One UI Core 6.1 | 5,000 mAh |
-                                    Warranty : 1 Year
-
-                                </p>
-                                <p class="text-[11px] text-red-600">
-                                    ฿32,900
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="slideHot_AI_4"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%]">
-                            <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/429014/Samsung-Smartphone-Galaxy-S24-FE-Light-Blue--1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[100%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-
-                                    สมาร์ทโฟน Samsung Galaxy S24 FE (8+256GB) Light Blue
-
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-
-                                    6.7 inch l RAM 8GB / ROM 256GB l Android 14 l 4,700 mAh l Warranty : 1 Year
-
-                                </p>
-                                <p class="text-[11px] text-red-600">
-                                    ฿20,900
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="slideHot_AI_5"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="m-[2%] ">
-                            <div class="m-[2%]  bg-[url(frameAI.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/472900/samsung-smartphone-galaxy-a56-8128gb-green-5g-08-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[100%]" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-
-                                    สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) GREEN (5G)
-
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-
-                                    6.7 inch | Exynose 1580 | RAM 8GB / ROM 128GB | Android 15 | 5,000 mAh |
-                                    Warranty 1 Year
-
-                                </p>
-                                <p class="text-[11px] text-red-600">
-                                    ฿13,999
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="slideHot_AI_6"
-                        class="carousel-item relative w-1/3 hover:border-2 hover:border-red-100 hover:shadow-xl rounded-lg hover:cursor-pointer bg-white mx-1">
-                        <div class="absolute -right-10 -top-1/2" id="slideHot_AI_6_1"></div>
-                        <div class="m-[2%] ">
-                            <div
-                                class="m-[2%] bg-size-[75%] bg-center bg-no-repeat bg-[url(https://media-cdn.bnn.in.th/269611/Samsung-Smartphone-Galaxy-S23-Ultra-Phantom-Black-5G-1-square_medium.jpg)]">
-                                <img src="frameAI.webp" class="w-full" />
-                            </div>
-                            <div class="m-[2%]">
-                                <p class="font-medium text-[12px]">
-
-                                    สมาร์ทโฟน Samsung Galaxy S23 Ultra (8+256GB) Phantom Black (5G)
-
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-
-
-                                    6.8 inch | Snapdragon 8 Gen 2 | RAM 8GB / ROM 256GB | Android 13, One UI
-                                    Core
-                                    5.1 | 5,000 mAh | Color : Phantom Black | Warranty : 1 Year
-
-
-                                </p>
-                                <p class="text-[11px] text-red-600">
-                                    ฿31,900
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute  top-1/2  bg-yellow-600 rounded-full opacity-80">
-                    <a href="#slideHot_AI_1_1" class="btn btn-circle">❮</a>
-                </div>
-
-                <div class=" absolute right-0 top-1/2 bg-yellow-600 rounded-full opacity-80">
-                    <a href="#slideHot_AI_6_1" class="btn btn-circle ">❯</a>
-                </div>
-
-            </div>
-            <!-- Top_hot_AI_Phone_sale -->
-            <div class="block lg:hidden ">
-                <div class="carousel w-full">
-                    <div id="item_AI_1" class="carousel-item w-full">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class="m-[3%]  bg-[url(frameai.webp)] bg-cover w-fit">
-                                <a href="Item1.html" target="_blank">
-                                    <img src="https://media-cdn.bnn.in.th/460537/samsung-galaxy-s25-ultra-12256-titanium-black-5g-1-square_medium.jpg"
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/472890/samsung-smartphone-galaxy-a56-8128gb-black-5g-08-square_medium.jpg"
                                         class="w-full p-[11%] rounded-[70%]" />
-                                </a>
-                            </div>
-                            <div class="m-[3%]">
-                                <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy S25 Ultra
-                                    (12+512GB)
-                                    Titanium Black (5G)
-                                    Gray</p>
-                                <p class="text-[11px] text-gray-500">6.9 inch | Snapdragon 8 Elite | Android
-                                    15
-                                    | 5,000 mAh | Warranty : 1 Year
-                                    | Warranty : 1 Year</p>
-                                <p class="text-[11px] text-red-600">฿46,900</p>
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) Black
+                                        (5G)</p>
+                                    <p class="text-[11px] text-gray-500">6.7 inch | Exynose 1580 | RAM 8GB / ROM
+                                        128GB |
+                                        Android 15 | 5,000 mAh | Warranty 1 Year</p>
+                                    <p class="text-[11px]  text-red-600">฿13,999</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/472890/samsung-smartphone-galaxy-a56-8128gb-black-5g-08-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[70%]" />
+                        <div id="item_AI_2" class="carousel-item w-full">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/363364/Samsung--Galaxy-S24-ULTRA--TITANIUM-5G-1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[70%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy S24 ULTRA (12+256GB)
+                                        TITANIUM (5G)</p>
+                                    <p class="text-[11px] text-gray-500">
+                                        6.8 inch | Snapdragon 8 Gen 3 | Android 14, One UI Core 6.1 | 5,000 mAh |
+                                        Warranty : 1 Year
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿32,900</p>
+                                </div>
                             </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) Black
-                                    (5G)</p>
-                                <p class="text-[11px] text-gray-500">6.7 inch | Exynose 1580 | RAM 8GB / ROM
-                                    128GB |
-                                    Android 15 | 5,000 mAh | Warranty 1 Year</p>
-                                <p class="text-[11px]  text-red-600">฿13,999</p>
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
+                                    <img src="https://media-cdn.bnn.in.th/429014/Samsung-Smartphone-Galaxy-S24-FE-Light-Blue--1-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[70%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy S24 FE (8+256GB) Light Blue
+
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        6.7 inch l RAM 8GB / ROM 256GB l Android 14 l 4,700 mAh l Warranty : 1 Year
+                                    </p>
+                                    <p class="text-[11px] text-red-600">฿20,900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="item_AI_3" class="carousel-item w-full">
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
+                                    <img src=" https://media-cdn.bnn.in.th/472900/samsung-smartphone-galaxy-a56-8128gb-green-5g-08-square_medium.jpg"
+                                        class="w-full p-[11%] rounded-[70%]" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) GREEN (5G)
+
+
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        6.7 inch | Exynose 1580 | RAM 8GB / ROM 128GB | Android 15 | 5,000 mAh |
+                                        Warranty 1 Year
+                                    </p>
+                                    <p class="text-[11px] text-red-600"> ฿13,999</p>
+                                </div>
+                            </div>
+                            <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
+                                <div
+                                    class=" m-[3%] bg-size-[76%] bg-center bg-no-repeat bg-[url(https://media-cdn.bnn.in.th/269611/Samsung-Smartphone-Galaxy-S23-Ultra-Phantom-Black-5G-1-square_medium.jpg)] ">
+                                    <img src="frameai.webp" class="w-full" />
+                                </div>
+                                <div class="m-[3%] ">
+                                    <p class="font-medium text-[12px]">
+
+                                        สมาร์ทโฟน Samsung Galaxy S23 Ultra (8+256GB) Phantom Black (5G)
+
+                                        <!-- bg-[url(frameai.webp)] -->
+
+                                    </p>
+                                    <p class="text-[11px] text-gray-500">
+                                        6.8 inch | Snapdragon 8 Gen 2 | RAM 8GB / ROM 256GB | Android 13, One UI
+                                        Core
+                                        5.1 | 5,000 mAh | Color : Phantom Black | Warranty : 1 Year
+                                    </p>
+                                    <p class="text-[11px] text-red-600"> ฿31,900
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="flex w-full justify-center gap-2 py-2">
+                        <a href="#item_AI_1" class="btn btn-xs border-2">1</a>
+                        <a href="#item_AI_2" class="btn btn-xs border-2">2</a>
+                        <a href="#item_AI_3" class="btn btn-xs border-2">3</a>
 
-                    <div id="item_AI_2" class="carousel-item w-full">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/363364/Samsung--Galaxy-S24-ULTRA--TITANIUM-5G-1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[70%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">สมาร์ทโฟน Samsung Galaxy S24 ULTRA (12+256GB)
-                                    TITANIUM (5G)</p>
-                                <p class="text-[11px] text-gray-500">
-                                    6.8 inch | Snapdragon 8 Gen 3 | Android 14, One UI Core 6.1 | 5,000 mAh |
-                                    Warranty : 1 Year
-                                </p>
-                                <p class="text-[11px] text-red-600">฿32,900</p>
-                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Blog & Review lg-->
+            <div style="font-family: Noto Sans Thai, sans-serif;"
+                class=" text-orange-900 underline lg:text-2xl text-start py-4 container">
+                Blog & Review
+            </div>
+            <div class="container">
+                <div class="text-center w-[100%] relative hidden lg:flex">
+                    <div class="my-4">
+                        <div class="mySlides_blog_review w3-animate-right ">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400 hover:cursor-pointer"
+                                src="Smart_2_tips_tricks_191222-homepage_small_banner_retina_medium.webp">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
+                                src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400 hover:cursor-pointer "
+                                src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp">
+
                         </div>
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
-                                <img src="https://media-cdn.bnn.in.th/429014/Samsung-Smartphone-Galaxy-S24-FE-Light-Blue--1-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[70%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
+                        <div class="mySlides_blog_review w3-animate-right ">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
+                                src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
+                                src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp">
+                            <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer"
+                                src="BNNCoverBlogOPPO-800x357-040124-homepage_small_banner_retina_medium.webp">
+                        </div>
+                        <div
+                            class="absolute top-[50%]  bg-yellow-600 opacity-80 text-center justify-center hidden lg:block rounded-full">
+                            <button class="w-10 h-10" onclick="plusDivs(-1)">❮</button>
+                        </div>
+                        <div
+                            class="absolute top-[50%] right-[0%] bg-yellow-600 opacity-80 text-center hidden lg:block rounded-full">
+                            <button class="w-10 h-10" onclick="plusDivs(1)">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                    สมาร์ทโฟน Samsung Galaxy S24 FE (8+256GB) Light Blue
+            <!--Blog & Review-->
+            <div class="block lg:hidden container ">
+                <div class="carousel w-full">
+                    <div class="carousel-item w-full relative">
+                        <div class="absolute -top-40" id="item1_1"></div>
+                        <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
 
+                            <img src="Smart_2_tips_tricks_191222-homepage_small_banner_retina_medium.webp"
+                                class="w-full rounded-lg border-2" />
 
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    6.7 inch l RAM 8GB / ROM 256GB l Android 14 l 4,700 mAh l Warranty : 1 Year
-                                </p>
-                                <p class="text-[11px] text-red-600">฿20,900</p>
-                            </div>
+                        </div>
+                        <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
+
+                            <img src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp"
+                                class="w-full rounded-lg " />
+
                         </div>
                     </div>
 
-                    <div id="item_AI_3" class="carousel-item w-full">
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div class=" m-[3%] bg-[url(frameai.webp)] bg-cover w-fit">
-                                <img src=" https://media-cdn.bnn.in.th/472900/samsung-smartphone-galaxy-a56-8128gb-green-5g-08-square_medium.jpg"
-                                    class="w-full p-[11%] rounded-[70%]" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
+                    <div class="carousel-item w-full relative">
+                        <div class="absolute -top-40 right-0" id="item2_2"></div>
+                        <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
 
-                                    สมาร์ทโฟน Samsung Galaxy A56 (8+128GB) GREEN (5G)
+                            <img src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp"
+                                class="w-full rounded-lg " />
 
-
-
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    6.7 inch | Exynose 1580 | RAM 8GB / ROM 128GB | Android 15 | 5,000 mAh |
-                                    Warranty 1 Year
-                                </p>
-                                <p class="text-[11px] text-red-600"> ฿13,999</p>
-                            </div>
                         </div>
-                        <div class="m-[3%]  hover:cursor-pointer hover:shadow-xl rounded-lg bg-white">
-                            <div
-                                class=" m-[3%] bg-size-[76%] bg-center bg-no-repeat bg-[url(https://media-cdn.bnn.in.th/269611/Samsung-Smartphone-Galaxy-S23-Ultra-Phantom-Black-5G-1-square_medium.jpg)] ">
-                                <img src="frameai.webp" class="w-full" />
-                            </div>
-                            <div class="m-[3%] ">
-                                <p class="font-medium text-[12px]">
+                        <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
 
-                                    สมาร์ทโฟน Samsung Galaxy S23 Ultra (8+256GB) Phantom Black (5G)
+                            <img src="BNNCoverBlogOPPO-800x357-040124-homepage_small_banner_retina_medium.webp"
+                                class="w-full rounded-lg " />
 
-                                    <!-- bg-[url(frameai.webp)] -->
-
-                                </p>
-                                <p class="text-[11px] text-gray-500">
-                                    6.8 inch | Snapdragon 8 Gen 2 | RAM 8GB / ROM 256GB | Android 13, One UI
-                                    Core
-                                    5.1 | 5,000 mAh | Color : Phantom Black | Warranty : 1 Year
-                                </p>
-                                <p class="text-[11px] text-red-600"> ฿31,900
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex w-full justify-center gap-2 py-2">
-                    <a href="#item_AI_1" class="btn btn-xs border-2">1</a>
-                    <a href="#item_AI_2" class="btn btn-xs border-2">2</a>
-                    <a href="#item_AI_3" class="btn btn-xs border-2">3</a>
-
+                    <a href="#item1_1" class="btn btn-xs border-2">1</a>
+                    <a href="#item2_2" class="btn btn-xs border-2">2</a>
                 </div>
             </div>
-        </div>
-        <!--Blog & Review lg-->
-        <div style="font-family: Noto Sans Thai, sans-serif;"
-            class=" text-orange-900 underline lg:text-2xl text-start py-4 container">
-            Blog & Review
-        </div>
-        <div class="container">
-            <div class="text-center w-[100%] relative hidden lg:flex">
-                <div class="my-4">
-                    <div class="mySlides_blog_review w3-animate-right ">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400 hover:cursor-pointer"
-                            src="Smart_2_tips_tricks_191222-homepage_small_banner_retina_medium.webp">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
-                            src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400 hover:cursor-pointer "
-                            src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp">
 
-                    </div>
-                    <div class="mySlides_blog_review w3-animate-right ">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
-                            src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer "
-                            src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp">
-                        <img class="w-[30%] inline-block rounded-2xl p-0.5 bg-gray-400  hover:cursor-pointer"
-                            src="BNNCoverBlogOPPO-800x357-040124-homepage_small_banner_retina_medium.webp">
-                    </div>
-                    <div
-                        class="absolute top-[50%]  bg-yellow-600 opacity-80 text-center justify-center hidden lg:block rounded-full">
-                        <button class="w-10 h-10" onclick="plusDivs(-1)">❮</button>
-                    </div>
-                    <div
-                        class="absolute top-[50%] right-[0%] bg-yellow-600 opacity-80 text-center hidden lg:block rounded-full">
-                        <button class="w-10 h-10" onclick="plusDivs(1)">❯</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!--Blog & Review-->
-        <div class="block lg:hidden container ">
-            <div class="carousel w-full">
-                <div class="carousel-item w-full relative">
-                    <div class="absolute -top-40" id="item1_1"></div>
-                    <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
 
-                        <img src="Smart_2_tips_tricks_191222-homepage_small_banner_retina_medium.webp"
-                            class="w-full rounded-lg border-2" />
 
-                    </div>
-                    <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
 
-                        <img src="Smart_Banner_How_to_จัดสเปกคอม_800x357-homepage_small_banner_retina_medium.webp"
-                            class="w-full rounded-lg " />
 
-                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- before footer lg -->
+            <div class=" container my-20 lg:flex justify-center hidden ">
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg"
+                        alt=""></div>
+                <div class="">ส่งฟรีทั่วไทย
+                    <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
                 </div>
 
-                <div class="carousel-item w-full relative">
-                    <div class="absolute -top-40 right-0" id="item2_2"></div>
-                    <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
-
-                        <img src="Smart_Blog_Review_Build_IT_COMSET_100123-310123-homepage_small_banner_retina_medium.webp"
-                            class="w-full rounded-lg " />
-
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg"
+                        alt=""></div>
+                <div class="">
+                    ส่งด่วนภายใน 3 ชั่วโมง
+                    <div class="text-gray-500">
+                        กรุงเทพฯ และพื้นที่ให้บริการ
                     </div>
-                    <div class=" w-full hover:cursor-pointer m-2 p-0.5 bg-gray-400 rounded-lg">
-
-                        <img src="BNNCoverBlogOPPO-800x357-040124-homepage_small_banner_retina_medium.webp"
-                            class="w-full rounded-lg " />
-
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg"
+                        alt=""></div>
+                <div class="">
+                    รับเองที่ร้าน
+                    <div class="text-gray-500">
+                        รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
+                    </div>
+                </div>
+                <div class="border-[1px] border-gray-300 mx-5"></div>
+                <div class="inline-block mx-5"><img
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
+                        alt=""></div>
+                <div class="">
+                    เปลี่ยน คืน ง่าย
+                    <div class="text-gray-500">
+                        ภายใน 7 วัน*
                     </div>
                 </div>
             </div>
-            <div class="flex w-full justify-center gap-2 py-2">
-                <a href="#item1_1" class="btn btn-xs border-2">1</a>
-                <a href="#item2_2" class="btn btn-xs border-2">2</a>
-            </div>
-        </div>
-        <!-- before footer lg -->
-        <div class=" container my-20 lg:flex justify-center hidden ">
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg" alt="">
-            </div>
-            <div class="">ส่งฟรีทั่วไทย
-                <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
-            </div>
 
-            <div class="border-[1px] border-gray-300 mx-5"></div>
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg" alt="">
-            </div>
-            <div class="">
-                ส่งด่วนภายใน 3 ชั่วโมง
-                <div class="text-gray-500">
-                    กรุงเทพฯ และพื้นที่ให้บริการ
+            <!-- before footer -->
+            <div class=" container my-5 justify-center text-center lg:hidden">
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg"
+                        alt=""></div>
+                <div class="">ส่งฟรีทั่วไทย
+                    <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
                 </div>
-            </div>
-            <div class="border-[1px] border-gray-300 mx-5"></div>
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg" alt="">
-            </div>
-            <div class="">
-                รับเองที่ร้าน
-                <div class="text-gray-500">
-                    รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
-                </div>
-            </div>
-            <div class="border-[1px] border-gray-300 mx-5"></div>
-            <div class="inline-block mx-5"><img
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
-                    alt=""></div>
-            <div class="">
-                เปลี่ยน คืน ง่าย
-                <div class="text-gray-500">
-                    ภายใน 7 วัน*
-                </div>
-            </div>
-        </div>
 
-        <!-- before footer -->
-        <div class=" container my-5 justify-center text-center lg:hidden">
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/freeshipping.045fe78.svg" alt="">
-            </div>
-            <div class="">ส่งฟรีทั่วไทย
-                <div class="text-gray-500">ช็อปครบ 3,000.- ขึ้นไป</div>
-            </div>
-
-            <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg" alt="">
-            </div>
-            <div class="">
-                ส่งด่วนภายใน 3 ชั่วโมง
-                <div class="text-gray-500">
-                    กรุงเทพฯ และพื้นที่ให้บริการ
-                </div>
-            </div>
-            <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
-            <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg" alt="">
-            </div>
-            <div class="">
-                รับเองที่ร้าน
-                <div class="text-gray-500">
-                    รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
-                </div>
-            </div>
-            <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
-            <div class="inline-block mx-5"><img
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
-                    alt=""></div>
-            <div class="">
-                เปลี่ยน คืน ง่าย
-                <div class="text-gray-500">
-                    ภายใน 7 วัน*
-                </div>
-            </div>
-        </div>
-        <!-- *****Contact Us lg ********-->
-        <div class="container border-t-[2px] border-t-gray-300 mb-10 lg:flex hidden justify-between">
-            <div class="mr-10">
-                <div class="mt-10 flex">
-                    <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
-                    <div class="flex lg:text-xl text-justify items-center">
-                        <p class="font-bold text-orange-600  lg:pl-2">O</p>
-                        <p class="font-bold text-orange-700 ">R</p>
-                        <p class="font-bold text-orange-800 ">A</p>
-                        <p class="font-bold text-green-700 ">N</p>
-                        <p class="font-bold text-green-800 ">G</p>
-                        <p class="font-bold text-green-900 ">E</p>
-                        <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
-                        <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/fastdelivery.5454292.svg"
+                        alt=""></div>
+                <div class="">
+                    ส่งด่วนภายใน 3 ชั่วโมง
+                    <div class="text-gray-500">
+                        กรุงเทพฯ และพื้นที่ให้บริการ
                     </div>
                 </div>
-                <div class="py-2 text-xs text-gray-500">
-                    ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
-                </div>
-                <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
-                    <div class="px-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                    </div>
-
-                    <div>ค้นหาร้านใกล้คุณ</div>
-                </button>
-                <div class="flex my-2">
-                    <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
-                            alt=""></a>
-                    <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
-                            alt=""></a>
-
-                </div>
-            </div>
-
-            <div class="mt-10 text-xs text-gray-700">
-                <div class="my-2 font-bold"><a href="">เกี่ยวกับ ORANGE iT</a></div>
-                <div class="my-2"><a href="">ติดต่อเรา</a></div>
-                <div class="my-2"><a href="">เกี่ยวกับ ORN.in.th</a></div>
-                <div class="my-2"><a href="">สมัครสมาชิก 7ClUB PLUS</a></div>
-                <div class="my-2"><a href="">ข้อกำหนดและเงื่อนไข</a></div>
-                <div class="my-2"><a href="">ร่วมงานกับเรา</a></div>
-            </div>
-
-            <div class="mt-10 text-xs text-gray-700">
-                <div class="my-2 font-bold"><a href="">บริการ</a></div>
-                <div class="my-2"><a href="">การยกเลิกรายการสั่งซื้อสินค้า</a></div>
-                <div class="my-2"><a href="">นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></div>
-                <div class="my-2"><a href="">การจัดส่งสินค้า</a></div>
-                <div class="my-2"><a href="">การคืนสินค้า</a></div>
-                <div class="my-2"><a href="">ช้อปแล้วรับสินค้าที่ร้าน</a></div>
-            </div>
-
-            <div class="mt-10 text-xs text-gray-700">
-                <div class="my-2 font-bold">Verified by</div>
-                <div class="flex">
-                    <img class="h-5 mx-1"
-                        src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
-                    <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
-                </div>
-                <div class="my-2 font-bold">ติดตามเรา</div>
-                <div class="flex">
-                    <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
-                            alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
-                            alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png" alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
-                            alt=""></a>
-                </div>
-                <div class="my-2 font-bold">บริการจัดส่ง</div>
-                <div class="flex">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="border-[1px] border-gray-300 mx-5 my-3 lg:hidden"></div>
-        <!-- *****Contact Us********-->
-        <div class="container mb-10 justify-between lg:hidden">
-            <div class="mr-10">
-                <div class="mt-10 flex">
-                    <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
-                    <div class="flex lg:text-xl text-justify items-center">
-                        <p class="font-bold text-orange-600  lg:pl-2">O</p>
-                        <p class="font-bold text-orange-700 ">R</p>
-                        <p class="font-bold text-orange-800 ">A</p>
-                        <p class="font-bold text-green-700 ">N</p>
-                        <p class="font-bold text-green-800 ">G</p>
-                        <p class="font-bold text-green-900 ">E</p>
-                        <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
-                        <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img src="https://www.bnn.in.th/_nuxt/img/clickncollect.e1d70d6.svg"
+                        alt=""></div>
+                <div class="">
+                    รับเองที่ร้าน
+                    <div class="text-gray-500">
+                        รับสินค้าใกล้บ้าน 600 สาขาทั่วประเทศ
                     </div>
                 </div>
-                <div class="py-2 text-xs text-gray-500">
-                    ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
-                </div>
-                <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
-                    <div class="px-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
+                <div class="border-[1px] border-gray-300 mx-5 my-3"></div>
+                <div class="inline-block mx-5"><img
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSIyMSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNLTYtMTdoNTZ2NTZILTZ6Ii8+PHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAuMDIxIDQuMzQzSDQuNDI3TDQuNDkyLjUuMjIyIDQuNzc3bDQuMTI2IDQuNDM2LjA2Mi0zLjg0aDM1LjYwOGMxLjUyNi0uMDAzIDIuNzY3IDEuMjg0IDIuNzc2IDIuODc4djguNTdjLS4wMDkgMS41OTUtMS4yNSAyLjg4MS0yLjc3NiAyLjg3N0gyLjM1NWMtLjI3IDAtLjQ5LjIzLS40OS41MTIgMCAuMjgzLjIyLjUxMi40OS41MTJoMzcuNjY2YzIuMDY1LjAwOCAzLjc0Ni0xLjczMyAzLjc1Ny0zLjg5VjguMjM0Yy0uMDExLTIuMTU4LTEuNjkyLTMuODk4LTMuNzU3LTMuODl6Ii8+PC9nPjwvc3ZnPg=="
+                        alt=""></div>
+                <div class="">
+                    เปลี่ยน คืน ง่าย
+                    <div class="text-gray-500">
+                        ภายใน 7 วัน*
                     </div>
-
-                    <div>ค้นหาร้านใกล้คุณ</div>
-                </button>
-                <div class="flex my-2">
-                    <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
-                            alt=""></a>
-                    <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
-                            alt=""></a>
-
                 </div>
             </div>
+            <!-- *****Contact Us lg ********-->
+            <div class="container border-t-[2px] border-t-gray-300 mb-10 lg:flex hidden justify-between">
+                <div class="mr-10">
+                    <div class="mt-10 flex">
+                        <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
+                        <div class="flex lg:text-xl text-justify items-center">
+                            <p class="font-bold text-orange-600  lg:pl-2">O</p>
+                            <p class="font-bold text-orange-700 ">R</p>
+                            <p class="font-bold text-orange-800 ">A</p>
+                            <p class="font-bold text-green-700 ">N</p>
+                            <p class="font-bold text-green-800 ">G</p>
+                            <p class="font-bold text-green-900 ">E</p>
+                            <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
+                            <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                        </div>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
+                    </div>
+                    <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
+                        <div class="px-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
 
+                        <div>ค้นหาร้านใกล้คุณ</div>
+                    </button>
+                    <div class="flex my-2">
+                        <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
+                                alt=""></a>
+                        <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
+                                alt=""></a>
 
-            <ul class="menu w-full text-xs mt-5">
-                <li>
-                    <details>
-                        <summary class="font-bold flex justify-between p-2 bg-gray-200 rounded-md">ช่วยเหลือ &
-                            ข้อมูลเพิ่มเติม</summary>
-                        <ul class="text-gray-700">
-                            <li><a>ติดต่อเรา</a></li>
-                            <li><a>เกี่ยวกับ ORN.in.th</a></li>
-                            <li><a>สมัครสมาชิก 7ClUB PLUS</a></li>
-                            <li><a>ข้อกำหนดและเงื่อนไข</a></li>
-                            <li><a>ร่วมงานกับเรา</a></li>
-                            <li><a>การยกเลิกรายการสั่งซื้อสินค้า</a></li>
-                            <li><a>นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></li>
-                            <li><a>การจัดส่งสินค้า</a></li>
-                            <li><a>การคืนสินค้า</a></li>
-                            <li><a>ช้อปแล้วรับสินค้าที่ร้าน</a></li>
-
-                        </ul>
-                </li>
-            </ul>
-
-            <div class="mt-5 text-xs text-gray-700">
-                <div class="my-2 font-bold">Verified by</div>
-                <div class="flex">
-                    <img class="h-5 mx-1"
-                        src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
-                    <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
+                    </div>
                 </div>
-                <div class="my-2 font-bold">ติดตามเรา</div>
-                <div class="flex">
-                    <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
-                            alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
-                            alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png" alt=""></a>
-                    <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
-                            alt=""></a>
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold"><a href="">เกี่ยวกับ ORANGE iT</a></div>
+                    <div class="my-2"><a href="">ติดต่อเรา</a></div>
+                    <div class="my-2"><a href="">เกี่ยวกับ ORN.in.th</a></div>
+                    <div class="my-2"><a href="">สมัครสมาชิก 7ClUB PLUS</a></div>
+                    <div class="my-2"><a href="">ข้อกำหนดและเงื่อนไข</a></div>
+                    <div class="my-2"><a href="">ร่วมงานกับเรา</a></div>
                 </div>
-                <div class="my-2 font-bold">บริการจัดส่ง</div>
-                <div class="flex">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
-                    <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold"><a href="">บริการ</a></div>
+                    <div class="my-2"><a href="">การยกเลิกรายการสั่งซื้อสินค้า</a></div>
+                    <div class="my-2"><a href="">นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></div>
+                    <div class="my-2"><a href="">การจัดส่งสินค้า</a></div>
+                    <div class="my-2"><a href="">การคืนสินค้า</a></div>
+                    <div class="my-2"><a href="">ช้อปแล้วรับสินค้าที่ร้าน</a></div>
+                </div>
+
+                <div class="mt-10 text-xs text-gray-700">
+                    <div class="my-2 font-bold">Verified by</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1"
+                            src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
+                        <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
+                    </div>
+                    <div class="my-2 font-bold">ติดตามเรา</div>
+                    <div class="flex">
+                        <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
+                                alt=""></a>
+                    </div>
+                    <div class="my-2 font-bold">บริการจัดส่ง</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="border-[1px] border-gray-300 mx-5 my-3 lg:hidden"></div>
+            <!-- *****Contact Us********-->
+            <div class="container mb-10 justify-between lg:hidden">
+                <div class="mr-10">
+                    <div class="mt-10 flex">
+                        <div class="inline-block"><img class="w-10" src="orange logo.png" alt=""></div>
+                        <div class="flex lg:text-xl text-justify items-center">
+                            <p class="font-bold text-orange-600  lg:pl-2">O</p>
+                            <p class="font-bold text-orange-700 ">R</p>
+                            <p class="font-bold text-orange-800 ">A</p>
+                            <p class="font-bold text-green-700 ">N</p>
+                            <p class="font-bold text-green-800 ">G</p>
+                            <p class="font-bold text-green-900 ">E</p>
+                            <p class="font-bold text-amber-950 lg:pl-2 pl-2">i</p>
+                            <p class="font-bold text-amber-950  lg:pr-2 pr-2">T</p>
+                        </div>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        ช้อปสินค้าไอทีได้ง่าย ตลอด 24 ชั่วโมง
+                    </div>
+                    <button class="border-[2px] py-1 px-2 flex border-gray-500 rounded-md ">
+                        <div class="px-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
+
+                        <div>ค้นหาร้านใกล้คุณ</div>
+                    </button>
+                    <div class="flex my-2">
+                        <a href="#"><img class="h-10 mr-2" src="https://www.bnn.in.th/_nuxt/img/app-store.91593f0.png"
+                                alt=""></a>
+                        <a href="#"><img class="h-10" src="https://www.bnn.in.th/_nuxt/img/play-store.1f21e89.png"
+                                alt=""></a>
+
+                    </div>
+                </div>
+
+
+                <ul class="menu w-full text-xs mt-5">
+                    <li>
+                        <details>
+                            <summary class="font-bold flex justify-between p-2 bg-gray-200 rounded-md">ช่วยเหลือ &
+                                ข้อมูลเพิ่มเติม</summary>
+                            <ul class="text-gray-700">
+                                <li><a>ติดต่อเรา</a></li>
+                                <li><a>เกี่ยวกับ ORN.in.th</a></li>
+                                <li><a>สมัครสมาชิก 7ClUB PLUS</a></li>
+                                <li><a>ข้อกำหนดและเงื่อนไข</a></li>
+                                <li><a>ร่วมงานกับเรา</a></li>
+                                <li><a>การยกเลิกรายการสั่งซื้อสินค้า</a></li>
+                                <li><a>นโยบายการรับประกันสินค้า / แจ้งเคลมสินค้า</a></li>
+                                <li><a>การจัดส่งสินค้า</a></li>
+                                <li><a>การคืนสินค้า</a></li>
+                                <li><a>ช้อปแล้วรับสินค้าที่ร้าน</a></li>
+
+                            </ul>
+                    </li>
+                </ul>
+
+                <div class="mt-5 text-xs text-gray-700">
+                    <div class="my-2 font-bold">Verified by</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1"
+                            src="https://www.bnn.in.th/_nuxt/img/trustmarkthai-dbd-registered-logo.144a077.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/ocpb.f711fc1.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/mastercard.ea61ba7.png" alt="">
+                        <img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/visa.4c84534.png" alt="">
+                    </div>
+                    <div class="my-2 font-bold">ติดตามเรา</div>
+                    <div class="flex">
+                        <a href=""> <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/facebook.44fa5b7.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="	https://www.bnn.in.th/_nuxt/img/instagram.7f4fc61.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/line.b6804d6.png"
+                                alt=""></a>
+                        <a href=""><img class="h-5 mx-1" src="		https://www.bnn.in.th/_nuxt/img/tiktok.4d81225.png"
+                                alt=""></a>
+                    </div>
+                    <div class="my-2 font-bold">บริการจัดส่ง</div>
+                    <div class="flex">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/kerry-express.97919a4.png" alt="">
+                        <img class="h-5 mx-1" src="https://www.bnn.in.th/_nuxt/img/dhl.25ee9e2.png" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- footer lg-->
-        <footer class="m-0 py-1 bg-black text-xs hidden lg:block">
-            <div class="container flex justify-between text-white">
-                <p>© Copyright 2025 RNG7 Public Company Limited All Rights Reserved. </p>
-                <div class="flex">
+            <!-- footer lg-->
+            <footer class="m-0 py-1 bg-black text-xs hidden lg:block">
+                <div class="container flex justify-between text-white">
+                    <p>© Copyright 2025 RNG7 Public Company Limited All Rights Reserved. </p>
+                    <div class="flex">
 
+                        <a href="#" class="px-1">ข้อกำหนดการใช้</a>
+                        <div class="border border-gray-500"></div>
+                        <a href="#" class="px-1 ">นโยบายความเป็นส่วนตัว</a>
+                        <div class="border border-gray-500"></div>
+                        <a href="#" class="px-1 ">การจัดการ Cookies</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer -->
+            <footer class="m-0 py-1 bg-black text-xs lg:hidden">
+                <div class="container flex justify-center text-white mb-2">
                     <a href="#" class="px-1">ข้อกำหนดการใช้</a>
                     <div class="border border-gray-500"></div>
                     <a href="#" class="px-1 ">นโยบายความเป็นส่วนตัว</a>
                     <div class="border border-gray-500"></div>
                     <a href="#" class="px-1 ">การจัดการ Cookies</a>
                 </div>
-            </div>
-        </footer>
-        <!-- footer -->
-        <footer class="m-0 py-1 bg-black text-xs lg:hidden">
-            <div class="container flex justify-center text-white mb-2">
-                <a href="#" class="px-1">ข้อกำหนดการใช้</a>
-                <div class="border border-gray-500"></div>
-                <a href="#" class="px-1 ">นโยบายความเป็นส่วนตัว</a>
-                <div class="border border-gray-500"></div>
-                <a href="#" class="px-1 ">การจัดการ Cookies</a>
-            </div>
-            <div class="container flex justify-center text-white text-center">© Copyright 2025 RNG7 Public Company
-                Limited All Rights Reserved. </div>
-        </footer>
-        <!-- log in -->
+                <div class="container flex justify-center text-white text-center">© Copyright 2025 RNG7 Public
+                    Company
+                    Limited All Rights Reserved. </div>
+            </footer>
+            <!-- log in -->
             <div class="absolute top-10 w-[100vw] h-[100vh] bg-gray-500/75 transition-opacity hidden" onclick="logIn()"
                 id="bgLogIn"></div>
             <div class="absolute top-[10%] lg:top-[0px] justify-center text-center w-fit mx-auto left-0 right-0 hidden"
@@ -2167,75 +2208,82 @@
 
 
 
-        <!-- update ตะกร้าสินค้า -->
-        <div class="container mt-5 hidden">
-            <div class="container mt-5">
-                <div class="flex items-center justify-between mb-4" id="cart-controls">
-                    <div class="flex items-center">
-                        <input type="checkbox" id="select-all" class="mr-2 w-4 h-4"
-                            onchange="toggleSelectAll(this.checked)" />
-                        <label for="select-all" class="font-medium">เลือกทั้งหมด</label>
-                    </div>
-                </div>
 
-                <div id="cart-items"></div>
-                <div class="flex justify-between items-center space-x-2">
-                    <button id="clear-btn" onclick="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded shadow">
-                        🗑️ ลบสินค้าทั้งหมด
-                    </button>
 
-                    <button id="checkout-btn" onclick="checkoutSelected()"
-                        class="bg-green-600 text-white px-4 py-2 rounded shadow">
-                        💳 ชำระสินค้าที่เลือก
-                    </button>
-                </div>
-
-            </div>
 
 
 
 
         </div>
+    </div>
+    <!-- ตะกร้าสินค้า -->
+    <div class="container mt-5 hidden">
+        <div class="container mt-5">
+            <div class="flex items-center justify-between mb-4" id="cart-controls">
+                <div class="flex items-center">
+                    <input type="checkbox" id="select-all" class="mr-2 w-4 h-4"
+                        onchange="toggleSelectAll(this.checked)" />
+                    <label for="select-all" class="font-medium">เลือกทั้งหมด</label>
+                </div>
+            </div>
 
-        <!-- ตรวจสอบเมื่อขนาดหน้าจอเปลี่ยน -->
-        <!-- <div class="opacity-0" id="size-output"></div> -->
-        <script>
-            function reportWindowSize() {
-                const width = window.innerWidth;
-                const height = window.innerHeight;
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-                let x1 = document.getElementById("resize");
-                let x = document.getElementById("searchMobile");
-                let y = document.getElementById("navBarLeftSide");
-                let z1 = document.getElementById("navBarRightSide");
-                let isMainPresent = x.classList.contains("hidden");
-                let isMainPresent2 = y.classList.contains("hidden");
-                let isMainPresent3 = z1.classList.contains("hidden");
-                document.getElementById("size-output").textContent =
-                    `ขนาดหน้าจอ: ${width} x ${height} พิกเซล`;
-                if (w > 1024) {
-                    // x1.style = "background:blue; height: 100px; width: 100px;";
-                    if (isMainPresent) {
+            <div id="cart-items"></div>
+            <div class="flex justify-between items-center space-x-2">
+                <button id="clear-btn" onclick="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded shadow">
+                    🗑️ ลบสินค้าทั้งหมด
+                </button>
 
-                    } else {
-                        x.classList.add("hidden");
-                    }
-                    if (isMainPresent2) {
-                        y.classList.remove("hidden");
-                        z1.classList.remove("hidden");
-                    } else {
+                <button id="checkout-btn" onclick="checkoutSelected()"
+                    class="bg-green-600 text-white px-4 py-2 rounded shadow">
+                    💳 ชำระสินค้าที่เลือก
+                </button>
+            </div>
 
-                    }
+        </div>
+    </div>
+
+
+
+    <!-- ตรวจสอบเมื่อขนาดหน้าจอเปลี่ยน -->
+    <div class="opacity-0" id="size-output"></div>
+    <script>
+        function reportWindowSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            let x1 = document.getElementById("resize");
+            let x = document.getElementById("searchMobile");
+            let y = document.getElementById("navBarLeftSide");
+            let z1 = document.getElementById("navBarRightSide");
+            let isMainPresent = x.classList.contains("hidden");
+            let isMainPresent2 = y.classList.contains("hidden");
+            let isMainPresent3 = z1.classList.contains("hidden");
+            document.getElementById("size-output").textContent =
+                `ขนาดหน้าจอ: ${width} x ${height} พิกเซล`;
+            if (w > 1024) {
+                // x1.style = "background:blue; height: 100px; width: 100px;";
+                if (isMainPresent) {
+
+                } else {
+                    x.classList.add("hidden");
+                }
+                if (isMainPresent2) {
+                    y.classList.remove("hidden");
+                    z1.classList.remove("hidden");
+                } else {
+
                 }
             }
-            window.addEventListener("resize", reportWindowSize);
-            reportWindowSize();
+        }
+        window.addEventListener("resize", reportWindowSize);
+        reportWindowSize();
 
-        </script>
-        <script src="main.js"></script>
-        <script src="items.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    </script>
+    <script src="main.js"></script>
+    <script src="items.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
