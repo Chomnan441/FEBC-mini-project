@@ -1117,31 +1117,32 @@
                     <div id="address-section" class="mb-6">
                         <!-- JS จะเติม select สำหรับที่อยู่เดิม และ input ชื่อ, ถนน, อำเภอ, รหัสไปรษณีย์, เบอร์โทร -->
                         <!-- เราใส่เฉพาะจังหวัด autocomplete ไว้ตรงนี้ -->
-                        <div class="relative mb-2">
+                        <!-- <div class="relative mb-2">
                             <input type="text" id="province" placeholder="จังหวัด" autocomplete="off"
                                 class="w-full p-2 border rounded" required />
                             <ul id="province-suggestions" class="absolute left-0 right-0 bg-white border border-gray-300 mt-1
                    rounded max-h-40 overflow-y-auto shadow-lg z-20 hidden">
                             </ul>
-                        </div>
+                        </div> -->
                         <!-- checkbox บันทึกที่อยู่ -->
-                        <div class="mb-6">
-                            <label class="inline-flex items-center">
+                        <!-- <div class="mb-6 border-2">
+                            <label class="inline-flex items-center ">
                                 <input type="checkbox" id="save-address" class="form-checkbox" />
-                                <span class="ml-2">บันทึกที่อยู่นี้สำหรับครั้งต่อไป</span>
+                                <span class="ml-2 ">บันทึกที่อยู่นี้สำหรับครั้งต่อไป</span>
                             </label>
-                        </div>
+                        </div> -->
                     </div>
-
                     <!-- 3. วิธีชำระเงิน -->
                     <h2 class="text-xl font-semibold mb-2">วิธีชำระเงิน</h2>
                     <div class="mb-4">
                         <label class="inline-flex items-center">
-                            <input type="radio" name="payment" value="card" checked class="form-radio" />
+                            <input type="radio" name="payment" value="card" checked
+                                class="form-radio border-2 border-black" />
                             <span class="ml-2">บัตรเครดิต / เดบิต</span>
                         </label>
                         <label class="inline-flex items-center ml-6">
-                            <input type="radio" name="payment" value="paypal" class="form-radio" />
+                            <input type="radio" name="payment" value="paypal"
+                                class="form-radio border-2 border-black" />
                             <span class="ml-2">PayPal</span>
                         </label>
                     </div>
@@ -1150,7 +1151,7 @@
                         <input type="text" id="cc-number" placeholder="หมายเลขบัตร (xxxx xxxx xxxx xxxx)"
                             class="w-full p-2 border rounded" required />
                         <div class="flex space-x-4">
-                            <input type="text" id="cc-expiry" placeholder="MM/YY" class="flex-1 p-2 border rounded"
+                            <input type="text" id="cc-expiry" placeholder="MM/YY" class="flex-1 p-2 border rounded "
                                 required />
                             <input type="text" id="cc-cvc" placeholder="CVC" class="flex-1 p-2 border rounded"
                                 required />
@@ -1658,9 +1659,34 @@
         reportWindowSize();
 
     </script>
+    <!-- หมายเลขบัตร จะมีเว้นวรรคให้ และป้อนเลขได้ไม่เกินเลขบัตรเครดิตจริงๆ -->
+    <script>
+        const ccInput = document.getElementById("cc-number");
+
+        ccInput.addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, ""); // ลบทุกตัวที่ไม่ใช่ตัวเลข
+            value = value.slice(0, 16); // จำกัดแค่ 16 ตัวเลข
+
+            // แบ่งเป็นกลุ่มละ 4 ตัว
+            const formatted = value.match(/.{1,4}/g)?.join(" ") || "";
+            e.target.value = formatted;
+        });
+        document.getElementById("cc-expiry").addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "").slice(0, 4);
+            if (value.length >= 3) {
+                value = value.slice(0, 2) + "/" + value.slice(2);
+            }
+            e.target.value = value;
+        });
+
+        document.getElementById("cc-cvc").addEventListener("input", function (e) {
+            e.target.value = e.target.value.replace(/\D/g, "").slice(0, 4); // บางบัตรใช้ 3 หรือ 4 หลัก
+        });
+    </script>
     <script src="checkout.js"></script>
     <script src="main.js"></script>
     <script src="items.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>

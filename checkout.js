@@ -143,7 +143,7 @@ function renderAddressSection() {
              placeholder="เบอร์โทรศัพท์"
              class="w-full p-2 border rounded" required />
       <label class="inline-flex items-center mt-2">
-        <input type="checkbox" id="save-address" class="form-checkbox" />
+        <input type="checkbox" id="save-address" class="form-checkbox border-2 border-black" />
         <span class="ml-2">บันทึกที่อยู่นี้สำหรับครั้งต่อไป</span>
       </label>
     </div>
@@ -166,6 +166,20 @@ function renderAddressSection() {
             }
         });
     }
+    // ช่องเบอร์โทรศัพท์รับเฉพาะตัวเลข ไม่เกิน 10 หลัก และมี เครื่องหมายขีด (-) ระหว่างหลักที่ 3 และ 4
+    const telInput = document.getElementById("tel");
+
+    telInput.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, ""); // ลบทุกตัวที่ไม่ใช่ตัวเลข
+        value = value.slice(0, 10); // จำกัดแค่ 10 ตัวเลข
+
+        // ใส่ขีดหลังหลักที่ 3
+        if (value.length > 3) {
+            value = value.slice(0, 3) + "-" + value.slice(3);
+        }
+
+        e.target.value = value;
+    });
 }
 
 // 5. ฟังก์ชันลบที่อยู่จาก savedAddresses
@@ -235,6 +249,7 @@ function setupProvinceAutocomplete() {
 function showThankYou() {
     document.getElementById("thankyou-modal")
         .classList.remove("hidden");
+
 }
 
 function closeThankYou() {
@@ -303,10 +318,18 @@ function handleSubmit(e) {
     localStorage.removeItem("cart");
     localStorage.removeItem("checkoutItems");
 
+
+
     // แสดงป้ายยืนยัน
     showThankYou();
     // redirect ไปหน้าขอบคุณ ถ้ามี
     // window.location.href = "thank-you.html";
+
+    // รีหน้าเว็บเหมือนกด F5
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000); // รอ 3 วินาที
+
 }
 
 // 8. เรียกใช้งานเมื่อโหลดหน้า
@@ -318,3 +341,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("checkout-form")
         .addEventListener("submit", handleSubmit);
 });
+
