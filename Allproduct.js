@@ -139,45 +139,9 @@ function renderProducts(page, productArray = products1) {
     productList.innerHTML = "";
     const start = (page - 1) * itemsPerPage;
     const selected = productArray.slice(start, start + itemsPerPage);
-
-    // selected.forEach((product, index) => {
-    //     const card = document.createElement("div");
-    //     card.className = `bg-white rounded-lg shadow p-4 opacity-0 transform translate-y-4 transition duration-700 ease-out`;
-    //     card.innerHTML = `
-    //   <img class="w-fit" src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover rounded">
-    //   <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
-    //   <p class="text-gray-600">${product.description}</p>
-    //   <p class="text-orange-600 font-bold mt-2">${product.price}</p>
-    // `;
-    //     productList.appendChild(card);
-    //     setTimeout(() => card.classList.remove("opacity-0", "translate-y-4"), index * 30);
-    // });
     selected.forEach((product, index) => {
         const card = document.createElement("div");
         card.className = `bg-white rounded-lg shadow p-4 opacity-0 transform translate-y-4 transition duration-700 ease-out`;
-        //         card.className = `
-        //     ${product.highlight ? "border-4 border-red-500" : ""} 
-        //     bg-white rounded-lg shadow p-4 opacity-0 transform translate-y-4 transition duration-700 ease-out
-        //   `;
-        // w-full h-32 <p class="text-orange-600 font-bold mt-2">${product.price}</p>
-        //         card.innerHTML = `
-        //     <div class="mb-6 lg:mb-10">
-        //     <div class="flex justify-center">
-        //     <div class="lg:w-[60%] w-[45%]">
-        //     <img class="w-fit" src="${product.image}" alt="${product.name}" class="w-full h-32 object-cover rounded">
-        //     </div>
-        //     </div>
-        //     <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
-        //     <p class="text-gray-600">${product.description}</p>
-        //     <p class="text-orange-600 font-bold mt-2">${product.price}</p>
-        //     </div>
-
-        //   `;
-        //         if (product.highlight) {
-        //             card.innerHTML += `
-        //     <img src="https://media-cdn.bnn.in.th/508611/BNNFeedJul01_010725_310725-frame_label_square_medium.png" alt="กรอบขายดี" class="absolute inset-0 w-full h-full pointer-events-none">
-        //   `;
-        //         }
         const frameMap = {
             "best-seller": "https://media-cdn.bnn.in.th/508611/BNNFeedJul01_010725_310725-frame_label_square_medium.png",
             "discount": "https://media-cdn.bnn.in.th/512216/iPhone16Plus-frame_label_square_medium.png",

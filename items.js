@@ -241,7 +241,8 @@ const products = [
     { name: "Apple iPad 11 (2025) A16 Wi-Fi", url: "product.html?id=xiaomi-g27i" },
     { name: "Apple iPad Mini 7 Wi-Fi", url: "product.html?id=ipad-pro-11" },
     { name: "Apple iPad Mini 7 Wi-Fi + Cellular", url: "product.html?id=iphone13-glass" },
-    { name: "iPhone 13 Pro Max เคสใส", url: "product.html?id=iphone13pro-clear" }
+    { name: "iPhone 13 Pro Max", url: "product.html?id=iphone13pro-clear" },
+    { name: "Samsung Galaxy S25 Ultra", url: "ItemSample.html" },
 ];
 
 const input = document.getElementById("searchInput");
